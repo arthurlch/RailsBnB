@@ -14,4 +14,4 @@ module Api
       render 'api/properties/show', status: :ok
     end
   end
-end
+end 
