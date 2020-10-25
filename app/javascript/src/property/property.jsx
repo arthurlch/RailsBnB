@@ -20,7 +20,7 @@ class Property extends React.Component {
           property: data.property,
           loading: false,
         })
-      })
+      }) 
   }
 
   render () {
