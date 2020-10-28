@@ -1,7 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :property
-
   has_many :charges
 
   validates :start_date, presence: true
