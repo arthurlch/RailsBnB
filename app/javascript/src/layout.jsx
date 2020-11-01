@@ -7,9 +7,8 @@ const Layout = (props) => {
   return (
     <React.Fragment>
       <div>
-      
       <nav className="navbar navbar-expand-xl py-0 position-absolute w-100" id="navbar">
-
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossOrigin="anonymous"></link>
         <div className="d-none d-xl-flex flex-grow-1" id="xlNavbar">
           <a className="navbar-brand py-0 pr-0 pl-2 text-white" href="#">Airbnb</a>
           <div className="navbar-nav ml-auto">
@@ -21,8 +20,11 @@ const Layout = (props) => {
           </div>
         </div>
 
-        <a className="navbar-toggler navbar-brand py-0 pr-0 pl-2 border-0 position-relative collapsed" role="button" data-toggle="collapse" href="#navbarMenu" id="navbarMenuToggler">Airbnb</a>
-        <div className="collapse navbar-collapse px-4 pb-4 font-weight-light bg-white position-absolute" id="navbarMenu">
+        <a className="navbar-toggler navbar-brand py-0 pr-0 pl-2 border-0 
+          position-relative collapsed" role="button" data-toggle="collapse" 
+          href="#navbarMenu" id="navbarMenuToggler">Airbnb</a>
+        <div className="collapse navbar-collapse px-4 pb-4 font-weight-light bg-white
+         position-absolute" id="navbarMenu">
           <a className="nav-item nav-link" href="#">Home</a>
           <hr />
           <a className="nav-item nav-link" href="#">Invite friends</a>
@@ -69,7 +71,7 @@ const Layout = (props) => {
             <li><a href="#" className="text-secondary">Business Travel</a></li>
             <li><a href="#" className="text-secondary">Guidebooks</a></li>
             <li><a href="#" className="text-secondary">Airbnbmag</a></li>
-            <li><a href="#" className="text-secondary">Events<span className="ml-1 badge badge-secondary font-weight-light p-1">New</span></a></li>
+            <li><a href="#" className="text-secondary">Events<span className="ml-1 badge badge-info font-weight-light p-1">New</span></a></li>
           </ul>
         </div>
         <div className="col-3">
@@ -79,8 +81,8 @@ const Layout = (props) => {
             <li><a href="#" className="text-secondary">Hospitality</a></li>
             <li><a href="#" className="text-secondary">Responsible Hosting</a></li>
             <li><a href="#" className="text-secondary">Community Center</a></li>
-            <li><a href="#" className="text-secondary">Host an Experience<span className="ml-1 badge badge-secondary font-weight-light p-1">New</span></a></li>
-            <li><a href="#" className="text-secondary">Open Homes<span className="ml-1 badge badge-secondary font-weight-light p-1">New</span></a></li>
+            <li><a href="#" className="text-secondary">Host an Experience<span className="ml-1 badge badge-info font-weight-light p-1">New</span></a></li>
+            <li><a href="#" className="text-secondary">Open Homes<span className="ml-1 badge badge-info font-weight-light p-1">New</span></a></li>
           </ul>
         </div>
         <div className="col-3">
@@ -111,7 +113,6 @@ const Layout = (props) => {
         </div>
       </div>
     </footer>
-   
     </React.Fragment>
   );
 }

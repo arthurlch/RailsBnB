@@ -1,55 +1,49 @@
 /* ----------- Container ----------- */
-
+@media (min-width: 1200px) {
+  .container-fluid {
+    max-width: 1080px;
+  }
+}
 .container-fluid, .container {
   padding-left: 24px;
   padding-right: 24px;
 }
 
 /* ----------- Navigation ----------- */
-
 @media (min-width: 1200px) {
   #navbarMenu {
     display: none !important;
   }
-
   #xlNavbar .nav-link div:hover {
     border-bottom: 2px solid #fff;
   }
 }
-
 #navbar {
   z-index: 1;
 }
-
 #xlNavbar .navbar-brand, #navbarMenuToggler, #xlNavbar .nav-link {
   line-height: 80px;
 }
-
 #xlNavbar .nav-link {
   font-size: 14px;
 }
-
 #navbarMenuToggler {
   color: rgb(255, 90, 95);
   transition: color 0.25s;
   z-index: 1;
 }
-
 #navbarMenuToggler.collapsed {
   color: #fff;
 }
-
 #navbarMenu .nav-link {
   color: #333;
 }
-
 #navbarMenu {
   top: 0;
   left: 0;
   right: 0;
   padding-top: 88px;
 }
-
 #navbarMenu .nav-link {
   padding: 12px 0;
 }
@@ -78,33 +72,20 @@
   }
 }
 
-/* ----------- Search form ----------- */
-
-#searchForm .form-control {
-  font-size: 15px;
-  font-weight: 300;
-  border-radius: 0;
+/* ----------- Footer ----------- */
+.footerNav h5, .footerNav a {
+  font-size: 14px;
 }
-
-#searchForm .btn-danger {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  background: #FF5A5F;
-  border-color: #FF5A5F;
+.footerNav h5 {
+  line-height: 18px;
 }
-
-@media (min-width: 1200px) {
-  #searchForm {
-    position: absolute;
-    top: 120px;
-    width: 100%;
-  }
-  #searchForm .container-fluid {
-    max-width: 1080px;
-  }
-  #searchForm form {
-    padding: 32px;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
-    max-width: 441px;
-  }
+.footerNav .social {
+  font-size: 18px;
+  height: 18px;
+}
+.footerBar small {
+  font-size: 14px;
+}
+.footerBar .select .angle {
+  transform: rotate(90deg);
 }
