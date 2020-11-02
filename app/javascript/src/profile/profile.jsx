@@ -3,10 +3,10 @@ import React from 'react';
 import Layout from '@src/layout';
 import { handleErrors } from '@utils/fetchHelper';
 
-import './user.scss';
+import './profile.scss';
 
 
-class User extends React.Component  {
+class Profile extends React.Component  {
   render() {
     return (
       <div>
