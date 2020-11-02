@@ -7,11 +7,33 @@ import './profile.scss';
 
 
 class Profile extends React.Component  {
+
+  state = {
+    user: []
+  }
+
+  componentDidMount() {
+    fetch('/api/users')
+      .then(handleErrors)
+      
+  }
+  // get user params 
+
+
+
   render() {
     return (
-      <div>
-        <h1>user page</h1>
+      <Layout>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+
+          </div>
+        </div>
       </div>
+      </Layout>
     )
   }
 } 
+
+export default Profile;

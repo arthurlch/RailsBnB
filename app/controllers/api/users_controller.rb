@@ -10,6 +10,10 @@ module Api
       end
     end
 
+    def show
+      @user = User.find(:username)
+    end
+    
     private
 
     def user_params

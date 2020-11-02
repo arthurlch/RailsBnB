@@ -48,29 +48,7 @@
   padding: 12px 0;
 }
 
-/* ----------- Hero ----------- */
 
-#hero {
-  background-image: url(./image/hero.jpg);
-  background-size: cover;
-  background-position: center bottom;
-}
-
-#hero h2 {
-  padding-top: 168px;
-}
-
-#message {
-  bottom: 0;
-  right: 0;
-}
-
-@media (min-width: 1200px) {
-  #hero {
-    height: 100vh;
-    min-height: 650px;
-  }
-}
 
 /* ----------- Footer ----------- */
 .footerNav h5, .footerNav a {

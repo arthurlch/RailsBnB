@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './image/hero.jpg'
+import './hero.scss'
 
 
 class Hero extends React.Component {
