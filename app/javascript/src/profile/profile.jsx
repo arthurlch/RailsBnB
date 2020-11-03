@@ -2,22 +2,23 @@
 import React from 'react';
 import Layout from '@src/layout';
 import { handleErrors } from '@utils/fetchHelper';
-
 import './profile.scss';
 
 
 class Profile extends React.Component  {
 
   state = {
-    user: []
+    authenticated: false,
+    existingBookings: []
   }
 
   componentDidMount() {
-    fetch('/api/users')
+    fetch('/api/users/show')
       .then(handleErrors)
       
   }
-  // get user params 
+
+
 
 
 
