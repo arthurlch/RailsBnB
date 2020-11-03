@@ -10,6 +10,16 @@ module Api
       end
     end
 
+    # get user 
+    def show
+      @user = User.find(user_params)
+      render json: @user
+    end
+
+    def update
+      
+    end
+    
     private
 
     def user_params

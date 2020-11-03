@@ -1,7 +1,6 @@
 // layout.js
 import React from 'react';
 import './layout.scss';
-import './image/hero.jpg'
 
 const Layout = (props) => {
   return (
@@ -42,11 +41,7 @@ const Layout = (props) => {
 
       </div>
 
-      <div id="hero">
-        <div className="container-fluid">
-          <h2 className="pb-3 pb-sm-4 text-white">Book unique homes and experiences.</h2>
-        </div>
-      </div>
+      
 
       {props.children}
       <footer className="container-fluid">

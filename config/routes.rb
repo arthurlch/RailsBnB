@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     # Add routes below this line
-    resources :users, only: [:create]
+    resources :users, only: [:create, :show, :update] 
     resources :sessions, only: [:create, :destroy]
     resources :properties, only: [:index, :show]
     resources :bookings, only: [:create]
@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     get '/properties/:id/bookings' => 'bookings#get_property_bookings'
     get '/authenticated' => 'sessions#authenticated'
     
-    # route need to be defined for user account 
     #stripe webhook
     post '/charges/mark_complete' => 'charges#mark_complete'
   end
