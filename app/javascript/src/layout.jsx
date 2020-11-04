@@ -1,6 +1,8 @@
 // layout.js
 import React from 'react';
 import './layout.scss';
+import Home from './home'
+import Profile from './profile/profile'
 import {
   BrowserRouter as Router,
   Switch,
@@ -45,6 +47,14 @@ const Layout = (props) => {
           <a className="nav-item nav-link" href="#">Help</a>
         </div>
       </nav>
+      <Switch>
+        <Route path="/">
+          <Home/>
+        </Route>
+        <Route path="/profile">
+          <Profile/>
+        </Route>
+      </Switch>
 
       </div>
 
@@ -115,6 +125,7 @@ const Layout = (props) => {
         </div>
       </div>
     </footer>
+    
     </Router>
     </React.Fragment>
   );
