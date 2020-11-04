@@ -1,10 +1,17 @@
 // layout.js
 import React from 'react';
 import './layout.scss';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+// react router, routing set up in layout.js
 const Layout = (props) => {
   return (
     <React.Fragment>
+      <Router>
       <div>
       <nav className="navbar navbar-expand-xl py-0 position-absolute w-100" id="navbar">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossOrigin="anonymous"></link>
@@ -108,6 +115,7 @@ const Layout = (props) => {
         </div>
       </div>
     </footer>
+    </Router>
     </React.Fragment>
   );
 }

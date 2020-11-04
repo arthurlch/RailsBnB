@@ -7,6 +7,8 @@ import { handleErrors } from '@utils/fetchHelper';
 
 import './home.scss';
 
+// gotta include the router here 
+
 class Home extends React.Component {
   state = {
     properties: [],
