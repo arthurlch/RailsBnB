@@ -11,12 +11,11 @@ Rails.application.routes.draw do
     resources :properties, only: [:index, :show]
     resources :bookings, only: [:create]
     resources :charges, only: [:create]
-    
     get '/properties/:id/bookings' => 'bookings#get_property_bookings'
     get '/authenticated' => 'sessions#authenticated'
-    
     #stripe webhook
     post '/charges/mark_complete' => 'charges#mark_complete'
   end
+
 
 end
