@@ -1,11 +1,11 @@
 // index.jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Profile from './profile';
+import User from './user';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Profile />,
+    <User />,
     document.body.appendChild(document.createElement('div')),
   )
 })

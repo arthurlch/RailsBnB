@@ -2,10 +2,10 @@
 import React from 'react';
 import Layout from '@src/layout';
 import { handleErrors } from '@utils/fetchHelper';
-import './profile.scss';
+import './user.scss';
 
 
-class Profile extends React.Component  {
+class User extends React.Component  {
 
   state = {
     authenticated: false,
@@ -28,7 +28,7 @@ class Profile extends React.Component  {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-
+            <h2>Profile Component</h2>
           </div>
         </div>
       </div>
@@ -37,4 +37,4 @@ class Profile extends React.Component  {
   }
 } 
 
-export default Profile;
+export default User;

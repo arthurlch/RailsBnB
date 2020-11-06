@@ -1,19 +1,19 @@
 // layout.js
 import React from 'react';
 import './layout.scss';
-
+// react router, routing set up in layout.js
 const Layout = (props) => {
   return (
     <React.Fragment>
+      
       <div>
       <nav className="navbar navbar-expand-xl py-0 position-absolute w-100" id="navbar">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossOrigin="anonymous"></link>
         <div className="d-none d-xl-flex flex-grow-1" id="xlNavbar">
           <a className="navbar-brand py-0 pr-0 pl-2 text-white" href="#">Airbnb</a>
           <div className="navbar-nav ml-auto">
+          <a className="nav-item nav-link py-0 px-2 text-white" href="#"><div className="px-2">Home</div></a>
             <a className="nav-item nav-link py-0 px-2 text-white" href="#"><div className="px-2">Become a host</div></a>
-            <a className="nav-item nav-link py-0 px-2 text-white" href="#"><div className="px-2">Earn credit</div></a>
-            <a className="nav-item nav-link py-0 px-2 text-white" href="#"><div className="px-2">Help</div></a>
             <a className="nav-item nav-link py-0 px-2 text-white" href="#"><div className="px-2">Sign up</div></a>
             <a className="nav-item nav-link py-0 px-2 text-white" href="#"><div className="px-2">Log in</div></a>
           </div>
@@ -27,23 +27,27 @@ const Layout = (props) => {
           <a className="nav-item nav-link" href="#">Home</a>
           <hr />
           <a className="nav-item nav-link" href="#">Invite friends</a>
-          <a className="nav-item nav-link" href="#">Refer hosts</a>
-          <a className="nav-item nav-link" href="#">Airbnb for work</a>
+          <a className="nav-item nav-link" href="#">Invite friends</a>
           <hr />
           <a className="nav-item nav-link" href="#">Host a home<br /><small>Earn up to <b>$12,319 HKD a month</b></small></a>
-          <a className="nav-item nav-link" href="#">Host an experience</a>
           <a className="nav-item nav-link" href="#">Sign up</a>
           <a className="nav-item nav-link" href="#">Log in</a>
           <hr />
           <a className="nav-item nav-link" href="#">Help</a>
         </div>
       </nav>
+      
+      <div>
+    
+      </div>
 
       </div>
 
       
 
       {props.children}
+
+
       <footer className="container-fluid">
       <div className="row pt-5 d-none d-md-flex footerNav">
         <div className="col-3">
@@ -108,6 +112,7 @@ const Layout = (props) => {
         </div>
       </div>
     </footer>
+    
     </React.Fragment>
   );
 }
