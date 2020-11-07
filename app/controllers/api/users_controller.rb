@@ -14,6 +14,8 @@ module Api
     def show
       @user = User.find_by(id: params[:id])
       return render json: { error: 'not_found' }, status: :not_found if !@user
+
+      render 'api/users/show', status: :ok
     end
 
     def update

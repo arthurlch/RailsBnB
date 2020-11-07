@@ -15,13 +15,13 @@
     display: none !important;
   }
   #xlNavbar .nav-link div:hover {
-    color: #42879c
+    color: #3e8297
     ;
   }
 }
 #navbar {
   z-index: 1;
-  background-color: #5bc0de;
+  background-color: #ffffff;
 }
 #xlNavbar .navbar-brand, #navbarMenuToggler, #xlNavbar .nav-link {
   line-height: 80px;
@@ -29,6 +29,7 @@
 #xlNavbar .nav-link {
   font-size: 14px;
   font-weight: 600;
+  color: #5bc0de;
 }
 #navbarMenuToggler {
   color: rgb(255, 90, 95);

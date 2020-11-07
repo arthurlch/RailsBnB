@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     get '/authenticated' => 'sessions#authenticated'
     #stripe webhook
     post '/charges/mark_complete' => 'charges#mark_complete'
-  end
+  end 
 
 
 end
