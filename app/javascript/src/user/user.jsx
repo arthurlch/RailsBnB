@@ -13,7 +13,7 @@ class User extends React.Component  {
   }
 
   componentDidMount() {
-    fetch('/api/users/show')
+    fetch(`/api/users/${this.props.user_id}`)
       .then(handleErrors)
       
   }
@@ -25,10 +25,10 @@ class User extends React.Component  {
   render() {
     return (
       <Layout>
-      <div className="container">
+      <div className="container my-4">
         <div className="row">
           <div className="col-md-12">
-            <h2>Profile Component</h2>
+            <h2>User Component</h2>
           </div>
         </div>
       </div>
