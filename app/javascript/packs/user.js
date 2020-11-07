@@ -1,2 +1,2 @@
-// profile.js
+// user.js
 import '@src/user';
