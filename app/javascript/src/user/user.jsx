@@ -13,7 +13,7 @@ class User extends React.Component  {
   }
 
   componentDidMount() {
-    fetch('/api/users/show')
+    fetch(`/api/users/${this.props.user_id}`)
       .then(handleErrors)
       
   }
