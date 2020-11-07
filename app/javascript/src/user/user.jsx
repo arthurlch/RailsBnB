@@ -9,8 +9,8 @@ class User extends React.Component  {
 
   state = {
     user: {},
-    authenticated: false
-  }
+    loading: false,
+  } 
 
   componentDidMount() {
     fetch(`/api/users/${this.props.user_id}`)
@@ -22,11 +22,6 @@ class User extends React.Component  {
         })
       }) 
   }
-
-
-
-
-
 
   render() {
     
@@ -43,13 +38,7 @@ class User extends React.Component  {
 
     return (
       <Layout>
-      <div className="container my-4">
-        <div className="row">
-          <div className="col-md-12">
-            <h2>User Component</h2>
-          </div>
-        </div>
-      </div>
+      <h2>User profile</h2>
       </Layout>
     )
   }
