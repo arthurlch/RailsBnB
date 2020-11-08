@@ -22,6 +22,16 @@ class User extends React.Component  {
       }) 
   }
 
+  getUserBookings() {
+    fetch(`/api/bookings/`)
+    .then(handleErrors)
+    .then(data => {
+      this.setState({
+        propert
+      })
+    })
+  }
+
   render() {
     
     const { user, loading } = this.state;
@@ -37,8 +47,19 @@ class User extends React.Component  {
 
     return (
       <Layout>    
-        <div>
-          <h2 key={user.id}>{user.username}</h2>
+        <div className="container pt-4 mt-4 ">
+        <div className="row pt-4 mt-4">
+          <h2>User Profile</h2>
+          <div className="col-md-6 pt-4 mt-4">
+            <h3>Username: </h3><h4 key={user.id}>{user.username}</h4>
+            <h3>Email: </h3><h4 key={user.email}>{user.email}</h4>
+            <h3>Booking</h3><h4></h4>
+          </div>
+          <div className="col-md-6">
+
+          </div>
+        </div>
+          
         </div> 
       </Layout>
     )
