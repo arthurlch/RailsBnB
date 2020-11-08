@@ -78,4 +78,4 @@ class Property extends React.Component {
   }
 }
 
-export default Property
+export default Property;

@@ -6,10 +6,9 @@ import './user.scss';
 
 
 class User extends React.Component  {
-
   state = {
     user: {},
-    loading: false,
+    loading: true,
   } 
 
   componentDidMount() {
@@ -37,10 +36,14 @@ class User extends React.Component  {
     } = user
 
     return (
-      <Layout>
-      <h2>User profile</h2>
+      <Layout>    
+        <div>
+          <h2 key={user.id}>{user.username}</h2>
+        </div> 
       </Layout>
     )
+     
+      
   }
 } 
 
