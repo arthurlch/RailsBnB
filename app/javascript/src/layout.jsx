@@ -5,6 +5,7 @@ import './layout.scss';
 const Layout = (props) => {
   return (
     <React.Fragment>
+      <div>
       <nav className="navbar navbar-expand-xl py-0 my-0 position-absolute w-100" id="navbar">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossOrigin="anonymous"></link>
         <div className="d-none d-xl-flex flex-grow-1" id="xlNavbar">
@@ -34,6 +35,7 @@ const Layout = (props) => {
           <a className="nav-item nav-link" href="#">Help</a>
         </div>
       </nav>
+      </div>
       
     
 
