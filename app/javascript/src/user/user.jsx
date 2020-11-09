@@ -22,14 +22,15 @@ class User extends React.Component  {
       }) 
   }
 
-  getUserBookings() {
-    fetch(`/api/bookings/`)
-    .then(handleErrors)
-    .then(data => {
-      this.setState({
-        propert
+  getUserPropertyBookings = () => {
+    fetch(`/api/properties/${this.props.property_id}/bookings`)
+      .then(handleErrors)
+      .then(data => {
+        console.log(data);
+        this.setState({
+          existingBookings: data.bookings,
+        })
       })
-    })
   }
 
   render() {
