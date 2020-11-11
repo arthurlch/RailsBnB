@@ -48,7 +48,7 @@ class User extends React.Component  {
             <h3>Username: </h3><h4 key={user.id}>{user.username}</h4>
             <h3>Email: </h3><h4 key={user.email}>{user.email}</h4>
             <h3>Properties</h3>
-            <p>{user.properties.name}</p>
+            <p>{property.name}</p>
             <h3>Bookings</h3>
             <p>{user.bookings.id}</p>
             
