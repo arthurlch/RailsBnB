@@ -22,16 +22,7 @@ class User extends React.Component  {
       }) 
   }
 
-  getUserPropertyBookings = () => {
-    fetch(`/api/properties/${this.props.property_id}/bookings`)
-      .then(handleErrors)
-      .then(data => {
-        console.log(data);
-        this.setState({
-          existingBookings: data.bookings,
-        })
-      })
-  }
+ 
 
   render() {
     
@@ -43,8 +34,9 @@ class User extends React.Component  {
     const {
       id,
       username,
-      email
-    } = user
+      email, 
+      properties
+    } = user  
 
     return (
       <Layout>    
@@ -54,6 +46,9 @@ class User extends React.Component  {
           <div className="col-md-6 pt-4 mt-4">
             <h3>Username: </h3><h4 key={user.id}>{user.username}</h4>
             <h3>Email: </h3><h4 key={user.email}>{user.email}</h4>
+            <h3>Properties</h3>
+            <p>{user.properties.name}</p>
+
             <h3>Booking</h3><h4></h4>
           </div>
           <div className="col-md-6">

@@ -13,8 +13,8 @@ class Property extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`/api/properties/${this.props.property_id}`)
-      .then(handleErrors)
+    fetch(`/api/properties/${this.props.property_id}`)  
+    .then(handleErrors)
       .then(data => {
         this.setState({
           property: data.property,
