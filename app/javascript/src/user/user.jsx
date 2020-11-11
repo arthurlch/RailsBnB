@@ -35,7 +35,8 @@ class User extends React.Component  {
       id,
       username,
       email, 
-      properties
+      properties,
+      bookings
     } = user  
 
     return (
@@ -48,8 +49,9 @@ class User extends React.Component  {
             <h3>Email: </h3><h4 key={user.email}>{user.email}</h4>
             <h3>Properties</h3>
             <p>{user.properties.name}</p>
-
-            <h3>Booking</h3><h4></h4>
+            <h3>Bookings</h3>
+            <p>{user.bookings.id}</p>
+            
           </div>
           <div className="col-md-6">
 
