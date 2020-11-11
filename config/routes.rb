@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     # Add routes below this line
     resources :users, only: [:create, :show, :update] 
     resources :sessions, only: [:create, :destroy]
-    resources :properties, only: [:index, :show]
-    resources :bookings, only: [:create]
+    resources :properties, only: [:index, :show, :index]
+    resources :bookings, only: [:create, :show, :index]
     resources :charges, only: [:create]
     get '/properties/:id/bookings' => 'bookings#get_property_bookings'
     get '/authenticated' => 'sessions#authenticated'
