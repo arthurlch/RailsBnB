@@ -9,3 +9,5 @@ json.user do
     end
   end
 end
+
+# go trough user.properties to get json, need to use same patterns for bookings
