@@ -22,6 +22,14 @@ module Api
 
       @bookings = property.bookings.where("end_date > ? ", Date.today)
       render 'api/bookings/index'
+
+      
+    end
+
+    def show
+      booking = Booking.last
+      booking.is_paid? # returns true or false
+      return render json: { error: 'cannot find booking' }, status: :not_found if !booking
     end
 
     private

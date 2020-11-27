@@ -2,8 +2,8 @@
 import React from 'react';
 import Layout from '@src/layout';
 import { handleErrors } from '@utils/fetchHelper';
-import './user.scss';
-import { map } from 'jquery';
+import UserPropertyWidget from './UserPropertyWidget'
+
 
 
 class User extends React.Component  {
@@ -47,18 +47,21 @@ class User extends React.Component  {
         <div className="container pt-4 mt-4 ">
         <div className="row pt-4 mt-4">
           <h2>User Profile</h2>
-          <div className="col-md-6 pt-4 mt-4">
-            <h3>Username: </h3><h4>{user.username}</h4>
-            <h3>Email: </h3><h4 >{user.email}</h4>
-            <h3>Properties</h3>
-            <h4>
-            {properties.map(property => 
-            <div key={property.id}> Property name {property.title} </div>)} 
-            </h4>
-            <h4>
+          <div className="col-md-12 pt-4 mt-4">
+            <div className="my-3">
+              <h3>Name:</h3>
+              <p>{user.username}</p>
+            </div>
+            <div className="my-3">
+              <h3>Email:</h3>
+              <p>{user.email}</p>
+            </div>
+            <UserPropertyWidget  />
+            <div className="my-3">
+            <h3>Your Booking</h3>
             {bookings.map(booking => 
-            <div key={booking.start_date}> Booking finish the {booking.end_date} </div>)} 
-            </h4>
+            <p key={booking.start_date}> Booking finish the  {booking.end_date} </p>)} 
+            </div>
             
           </div>
           <div className="col-md-6">
