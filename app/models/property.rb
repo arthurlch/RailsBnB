@@ -4,6 +4,7 @@ class Property < ApplicationRecord
 
 
   validates :title, presence: true, length: { maximum: 70 }
+  validates :name, presence: true, length: { maximum: 70 }
   validates :description, presence: true, length: { maximum: 2000 }
   validates :city, presence: true, length: { maximum: 200 }
   validates :country, presence: true, length: { maximum: 200 }
