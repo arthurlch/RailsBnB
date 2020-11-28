@@ -1,10 +1,9 @@
 class Property < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings 
 
 
   validates :title, presence: true, length: { maximum: 70 }
-  validates :name, presence: true, length: { maximum: 70 }
   validates :description, presence: true, length: { maximum: 2000 }
   validates :city, presence: true, length: { maximum: 200 }
   validates :country, presence: true, length: { maximum: 200 }

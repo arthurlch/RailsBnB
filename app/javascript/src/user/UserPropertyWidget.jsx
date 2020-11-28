@@ -41,6 +41,7 @@ class UserPropertyWidget extends React.Component  {
             className="my-3"
             key={property.id}> 
             Property name : {property.title} 
+            Property description: {property.description}
             <button className="btn btn-sm btn-info ml-2">Edit</button>
           </div>)} 
           <button className="btn btn-info">Add property</button>
