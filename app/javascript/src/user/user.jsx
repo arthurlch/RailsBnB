@@ -15,7 +15,7 @@ class User extends React.Component  {
   componentDidMount() {
     fetch(`/api/users/${this.props.user_id}`)
       .then(handleErrors)
-      .then(data => {
+      .then(data => {             
         this.setState({
           user: data.user,
           loading: false,
@@ -56,7 +56,7 @@ class User extends React.Component  {
               <h3>Email:</h3>
               <p>{user.email}</p>
             </div>
-            <UserPropertyWidget  />
+            <UserPropertyWidget user_id={id} />
             <div className="my-3">
             <h3>Your Booking</h3>
             {bookings.map(booking => 

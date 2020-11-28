@@ -1,19 +1,17 @@
-
 import React from 'react';
 import { handleErrors } from '@utils/fetchHelper';
 
 class UserPropertyWidget extends React.Component  {
-  constructor(props){
-    super(props)
-    this.state = {
+  
+    state = {
       user: {},
       loading: true,
     }
-  }
+  
   
 
-  componentDidMount() {
-    fetch(`/api/users/${this.props.user_id}`)
+  async componentDidMount() {
+    await fetch(`/api/users/${this.props.user_id}`)
       .then(handleErrors)
       .then(data => {
         this.setState({
@@ -22,7 +20,6 @@ class UserPropertyWidget extends React.Component  {
         })
       }) 
   }
-
 
   render() {
     const { user, loading } = this.state;
@@ -52,7 +49,6 @@ class UserPropertyWidget extends React.Component  {
     )
 
   }
-
 }
 
 export default UserPropertyWidget
