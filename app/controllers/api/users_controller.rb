@@ -13,8 +13,6 @@ module Api
     # get user
     def show
       @user = User.find_by(id: params[:id])
-      @properties = @user.properties
-      @bookings = @user.bookings
       return render json: { error: 'not_found' }, status: :not_found if !@user
       render 'api/users/show', status: :ok
     end
