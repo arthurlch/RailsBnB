@@ -8,10 +8,8 @@ class UserPropertyWidget extends React.Component  {
       loading: true,
     }
   
-  
-
-  async componentDidMount() {
-    await fetch(`/api/users/${this.props.user_id}`)
+   componentDidMount() {
+     fetch(`/api/users/${this.props.user_id}`)
       .then(handleErrors)
       .then(data => {
         this.setState({
@@ -35,15 +33,21 @@ class UserPropertyWidget extends React.Component  {
     return (
       <div className="userPropertyWidget">
         <div className="my-3">
-          <h3>Your Properties</h3>
+          <h3>Your Properties:</h3>
           {properties.map(property => 
-          <div 
-            className="my-3"
-            key={property.id}> 
-            Property name : {property.title} 
-            Property description: {property.description}
-            <button className="btn btn-sm btn-info ml-2">Edit</button>
-          </div>)} 
+          <ul className="my-4 py-3" key={property.id}> 
+            <li><span className="font-weight-bold">Name:</span> {property.title}</li>
+            <li>Description: {property.description}</li>
+            <li>City: {property.city}</li>
+            <li>Country: {property.country}</li>
+            <li>type: {property.property_type}</li>
+            <li>Price per night: {property.price_per_night}</li>
+            <li>Max of guest: {property.max_guests}</li>
+            <li>Bedrooms: {property.bedrooms}</li>
+            <li>Beds: {property.beds}</li>
+            <li>Baths: {property.baths}</li>
+            <button className="btn btn-sm btn-info">Edit</button>
+          </ul>)} 
           <button className="btn btn-info">Add property</button>
         </div>
       </div>
