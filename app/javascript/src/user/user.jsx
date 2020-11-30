@@ -2,7 +2,7 @@
 import React from 'react';
 import Layout from '@src/layout';
 import { handleErrors } from '@utils/fetchHelper';
-import UserPropertyWidget from './UserPropertyWidget'
+import UserProperty from './UserProperty'
 
 
 
@@ -22,9 +22,6 @@ class User extends React.Component  {
         })
       }) 
   }
-
-  
- 
 
   render() {
     
@@ -46,17 +43,20 @@ class User extends React.Component  {
       <Layout>    
         <div className="container pt-4 mt-4 ">
         <div className="row pt-4 mt-4">
+
           <h2>User Profile</h2>
           <div className="col-md-12 pt-4 mt-4">
             <div className="my-3">
               <h3>Name:</h3>
-              <p>{user.username}</p>
+              <p>{user.username}</p>  
             </div>
             <div className="my-3">
               <h3>Email:</h3>
               <p>{user.email}</p>
             </div>
-            <UserPropertyWidget user_id={id} />
+
+            <UserProperty user_id={id} />
+
             <div className="my-3">
             <h3>Your Booking</h3>
             {bookings.map(booking => 

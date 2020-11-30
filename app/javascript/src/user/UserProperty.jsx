@@ -1,15 +1,25 @@
 import React from 'react';
+import UserPropertyForm from './UserPropertyForm'
 import { handleErrors } from '@utils/fetchHelper';
 
-class UserPropertyWidget extends React.Component  {
-  
-    state = {
+class UserProperty extends React.Component  {
+  constructor(props) {
+    super(props)
+    this.state = {
       user: {},
       loading: true,
+      show: false
     }
+    this.getUser = this.getUser.bind(this)
+  }
+    
   
-   componentDidMount() {
-     fetch(`/api/users/${this.props.user_id}`)
+  componentDidMount() {
+    this.getUser()
+  }
+
+  getUser() {
+    fetch(`/api/users/${this.props.user_id}`)
       .then(handleErrors)
       .then(data => {
         this.setState({
@@ -17,6 +27,12 @@ class UserPropertyWidget extends React.Component  {
           loading: false,
         })
       }) 
+  }
+
+  _showForm = (bool) => {
+    this.setState({
+      showForm: bool
+    });
   }
 
   render() {
@@ -29,9 +45,8 @@ class UserPropertyWidget extends React.Component  {
       properties
     } = user  
 
-
     return (
-      <div className="userPropertyWidget">
+      <div className="">
         <div className="my-3">
           <h3>Your Properties:</h3>
           {properties.map(property => 
@@ -48,15 +63,19 @@ class UserPropertyWidget extends React.Component  {
             <li>Baths: {property.baths}</li>
             <button className="btn btn-sm btn-info">Edit</button>
           </ul>)} 
-          <button className="btn btn-info">Add property</button>
         </div>
+        <div>
+        <button className="btn btn-sm btn-info" onClick={this._showForm.bind(null, true)}>Add Property</button>
+        <button className="btn btn-sm btn-info" onClick={this._showForm.bind(null, false)}>Hide Form</button>
+        { this.state.showForm && (<div><UserPropertyForm/></div>) }
+      </div>
       </div>
     )
 
   }
 }
 
-export default UserPropertyWidget
+export default UserProperty
 
 
 
