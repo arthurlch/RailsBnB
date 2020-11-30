@@ -2,7 +2,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import User from './user';
-import UserPropertyWidget from './UserPropertyWidget'
 
 document.addEventListener('DOMContentLoaded', () => {
   const node = document.getElementById('params');
