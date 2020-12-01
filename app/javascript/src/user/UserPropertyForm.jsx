@@ -35,54 +35,51 @@ export default class UserPropertyForm extends React.Component {
   
 
  render () {
-  const {
-    properties
-  } = user  
-
+   
    return(
      <div className="py-4 my-4 row">
       <form onSubmit={this.handleSubmit} id="userPropertyForm">
         
         <div className="form-group">
-          <label className="col" htmlFor="title">Property Title</label>
+          <label className="col" htmlFor="form-property-title">Property Title</label>
           <input className="form-control form-control-sm" id="form-property-title" 
-            rows="1" name="property_title" type="text" value={property.title}/>
+            rows="1" name="title" type="text" value={this.state.title} onChange={this.handleChange}/>
         </div>
 
         <div className="form-group">
-          <label className="col" htmlFor="description">Property Description</label>
+          <label className="col" htmlFor="form-property-description">Property Description</label>
           <textarea className="form-control form-control-sm" id="form-property-description" 
-            rows="2" name="property_description" ref="property_description"></textarea>
+            rows="2" name="description" onChange={this.handleChange}></textarea>
         </div>
 
         <div className="form-group">
-          <label className="col" htmlFor="city">Property City</label>
+          <label className="col" htmlFor="form-property-city">Property City</label>
           <input className="form-control form-control-sm" id="form-property-city"
-             rows="3" name="property_city" ref="property_city"/>
+             rows="3" name="city" onChange={this.handleChange}/>
         </div>
         
         <div className="form-group">
-          <label className="col" htmlFor="country">Property Country</label>
+          <label className="col" htmlFor="form-property-country">Property Country</label>
           <input className="form-control form-control-sm" id="form-property-country" 
-            rows="1" name="property_country" ref="property_country" />
+            rows="1" name="country" onChange={this.handleChange} />
         </div>
 
         <div className="form-group">
-          <label className="col" htmlFor="property_type">Property type</label>
+          <label className="col" htmlFor="form-property-type">Property type</label>
           <input className="form-control form-control-sm" id="form-property-type" 
-            rows="1" name="property_type" ref="property_type" />
+            rows="1" name="property_type" onChange={this.handleChange} />
         </div>
 
         <div className="form-group">
           <label className="col" htmlFor="price_per_night">Price per Night</label>
           <input className="form-control form-control-sm" id="price-per-night" 
-            rows="1" name="price_per_night" ref="price_per_night" />
+            rows="1" name="price_per_night" onChange={this.handleChange} />
         </div>
 
         <div className="form-group">
           <label className="col" htmlFor="max_guests">Max guests</label>
           <input className="form-control form-control-sm" id="max-guests" 
-            rows="1" name="max_guests" ref="max_guests"/>
+            rows="1" name="max_guests" onChange={this.handleChange}/>
         </div>
 
         <button className="btn btn-sm btn-danger" type="submit">Submit</button>
