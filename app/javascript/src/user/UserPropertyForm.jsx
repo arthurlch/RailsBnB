@@ -4,7 +4,16 @@ export default class UserPropertyForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: {}
+      title: "",
+      description: "",
+      city: "",
+      country: "",
+      property_type: "",
+      price_per_night: "",
+      max_guests: "",
+      bedrooms: "",
+      beds: "",
+      baths: ""
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -29,6 +38,7 @@ export default class UserPropertyForm extends React.Component {
   const {
     properties
   } = user  
+
    return(
      <div className="py-4 my-4 row">
       <form onSubmit={this.handleSubmit} id="userPropertyForm">
@@ -36,7 +46,7 @@ export default class UserPropertyForm extends React.Component {
         <div className="form-group">
           <label className="col" htmlFor="title">Property Title</label>
           <input className="form-control form-control-sm" id="form-property-title" 
-            rows="1" name="property_title" type="text" value={this.state.user}/>
+            rows="1" name="property_title" type="text" value={property.title}/>
         </div>
 
         <div className="form-group">
