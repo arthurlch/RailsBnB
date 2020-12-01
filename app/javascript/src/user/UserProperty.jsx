@@ -64,11 +64,16 @@ class UserProperty extends React.Component  {
             <button className="btn btn-sm btn-info">Edit</button>
           </ul>)} 
         </div>
+
         <div>
-        <button className="btn btn-sm btn-info" onClick={this._showForm.bind(null, true)}>Add Property</button>
-        <button className="btn btn-sm btn-info" onClick={this._showForm.bind(null, false)}>Hide Form</button>
-        { this.state.showForm && (<div><UserPropertyForm/></div>) }
-      </div>
+          <h4 className="py-4 my-4">Become a host today and add a property to your account!</h4>
+          <button className="btn btn-sm btn-info mx-3" onClick={this._showForm.bind(null, true)}>Add Property</button>
+          <button className="btn btn-sm" onClick={this._showForm.bind(null, false)}>Hide Form</button>
+          { this.state.showForm && (
+            <div className="UserPropertyForm"><UserPropertyForm/></div>)
+            }
+        </div>
+
       </div>
     )
 
