@@ -35,6 +35,10 @@ class UserProperty extends React.Component  {
     });
   }
 
+  updateUserProperties(properties) {
+    let _property = this.state.user
+    _properties.unshift(property)
+  }
   render() {
     const { user, loading } = this.state;
     if (loading) {
@@ -70,7 +74,9 @@ class UserProperty extends React.Component  {
           <button className="btn btn-sm btn-info mx-3" onClick={this._showForm.bind(null, true)}>Add Property</button>
           <button className="btn btn-sm" onClick={this._showForm.bind(null, false)}>Hide Form</button>
           { this.state.showForm && (
-            <div className="UserPropertyForm"><UserPropertyForm/></div>)
+            <div className="UserPropertyForm">
+              <UserPropertyForm/>
+            </div>)
             }
         </div>
 
