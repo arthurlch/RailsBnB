@@ -49,6 +49,7 @@ class UserProperty extends React.Component  {
     };
 
     const {
+      id,
       properties
     } = user  
 
@@ -78,7 +79,7 @@ class UserProperty extends React.Component  {
           <button className="btn btn-sm" onClick={this._showForm.bind(null, false)}>Hide Form</button>
           { this.state.showForm && (
             <div className="UserPropertyForm">
-              <UserPropertyForm addProperty={this.addProperty}/>
+              <UserPropertyForm user_id={id}/>
             </div>)
             }
         </div>

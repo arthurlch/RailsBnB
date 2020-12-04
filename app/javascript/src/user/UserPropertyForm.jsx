@@ -27,15 +27,12 @@ export default class UserPropertyForm extends React.Component {
   }
 
   handleSubmit(e) {
-    if (e) { e.preventDefault(); }
-    this.setState({
-      error: '',
-    });
+   e.preventDefault()
 
-    fetch(`/api/users/${this.props.user_id}`, safeCredentials({
+    fetch(`/api/users`, {
       method: 'POST',
       body: JSON.stringify({
-        property: {
+        properties: [{
           id: this.state.id,
           title: this.state.title,
           description: this.state.description,
@@ -47,20 +44,9 @@ export default class UserPropertyForm extends React.Component {
           bedrooms: this.state.bedrooms,
           beds: this.state.beds,
           baths: this.state.baths
-        }
+        }]
       })
-    }))
-      .then(handleErrors)
-      .then(data => {
-        if (data.user) {
-          this.login();
-        }
-      })
-      .catch(error => {
-        this.setState({
-          error: 'Could not sign up.',
-        })
-      })
+    })
   }
   
  render () {
