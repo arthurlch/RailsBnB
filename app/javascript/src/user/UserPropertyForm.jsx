@@ -1,5 +1,5 @@
 import React from 'react' 
-
+// fetch from property api and post to property api instead of user.properties 
 export default class UserPropertyForm extends React.Component {
   constructor(props) {
     super(props)
