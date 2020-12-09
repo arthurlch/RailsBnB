@@ -14,7 +14,8 @@ export default class UserPropertyForm extends React.Component {
       max_guests: "",
       bedrooms: "",
       beds: "",
-      baths: ""
+      baths: "",
+      owner: this.props.user_id
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -29,7 +30,7 @@ export default class UserPropertyForm extends React.Component {
   handleSubmit(e) {
    e.preventDefault()
 
-    fetch(`/api/users`, {
+    fetch('/api/properties/create', {
       method: 'POST',
       body: JSON.stringify({
         properties: [{
@@ -43,7 +44,8 @@ export default class UserPropertyForm extends React.Component {
           max_guests: this.state.max_guests,
           bedrooms: this.state.bedrooms,
           beds: this.state.beds,
-          baths: this.state.baths
+          baths: this.state.baths,
+          owner: this.state.owner
         }]
       })
     })
