@@ -1,5 +1,8 @@
 class Property < ApplicationRecord
-  belongs_to :user, optional: true
+
+  # when declaring a foreign key (belgons to) it needs to be link in the controller 
+  
+  belongs_to :user 
   has_many :bookings
 
 
