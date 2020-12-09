@@ -14,7 +14,7 @@ module Api
 
       @property = Property.new(property_params)
 
-      if @property.save
+      if @property.save!
         render 'api/properties/create', status: :created
       else
         render json: { success: false }, status: :bad_request

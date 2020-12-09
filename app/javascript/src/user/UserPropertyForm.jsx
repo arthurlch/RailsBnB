@@ -47,7 +47,8 @@ export default class UserPropertyForm extends React.Component {
           beds: this.state.beds,
           baths: this.state.baths,
         }
-      })
+      }),
+      headers: {'Content-Type': 'application/json'}
   }))
     .then(handleErrors)
     .catch(error => {
