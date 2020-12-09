@@ -1,5 +1,9 @@
 class Property < ApplicationRecord
-  belongs_to :user, optional: true
+
+  # when declaring a foreign key (belgons to) it needs to be link in the controller 
+  # ex person.avatar.attach(params[:avatar]) # ActionDispatch::Http::UploadedFile object
+
+  belongs_to :user 
   has_many :bookings
 
 
