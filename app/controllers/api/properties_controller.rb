@@ -1,6 +1,6 @@
 module Api
   class PropertiesController < ApplicationController
-
+    # https://api.rubyonrails.org/classes/ActiveStorage/Attached/One.html
     skip_before_action :verify_authenticity_token
 
     def index
