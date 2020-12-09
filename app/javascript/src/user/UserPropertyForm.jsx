@@ -1,10 +1,12 @@
 import React from 'react' 
+import { safeCredentials, handleErrors } from '@utils/fetchHelper';
+
 // fetch from property api and post to property api instead of user.properties 
 export default class UserPropertyForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = { 
-      id: "",
+      id: 34,
       title: "",
       description: "",
       city: "",
@@ -15,7 +17,6 @@ export default class UserPropertyForm extends React.Component {
       bedrooms: "",
       beds: "",
       baths: "",
-      owner: this.props.user_id
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -30,10 +31,10 @@ export default class UserPropertyForm extends React.Component {
   handleSubmit(e) {
    e.preventDefault()
 
-    fetch('/api/properties/create', {
-      method: 'POST',
+   fetch(`/api/properties`, safeCredentials({
+    method: 'POST',
       body: JSON.stringify({
-        properties: [{
+        property: {
           id: this.state.id,
           title: this.state.title,
           description: this.state.description,
@@ -45,9 +46,12 @@ export default class UserPropertyForm extends React.Component {
           bedrooms: this.state.bedrooms,
           beds: this.state.beds,
           baths: this.state.baths,
-          owner: this.state.owner
-        }]
+        }
       })
+  }))
+    .then(handleErrors)
+    .catch(error => {
+      console.log(error);
     })
   }
   
@@ -89,30 +93,31 @@ export default class UserPropertyForm extends React.Component {
         <div className="form-group">
           <label className="col" htmlFor="price_per_night">Price per Night:</label>
           <input className="form-control form-control-sm" id="price-per-night" 
-            rows="1" name="price_per_night" value={this.state.price_per_night || ''} onChange={this.handleChange} />
+            rows="1" name="price_per_night" type="number" pattern="[0-9]*"
+            value={this.state.price_per_night || ''} onChange={this.handleChange} />
         </div>
 
         <div className="form-group">
           <label className="col" htmlFor="max_guests">Max guests:</label>
-          <input className="form-control form-control-sm" id="max-guests" 
+          <input className="form-control form-control-sm" id="max-guests" type="number" pattern="[0-9]*" 
             rows="1" name="max_guests" value={this.state.max_guests || ''} onChange={this.handleChange}/>
         </div>
 
         <div className="form-group">
           <label className="col" htmlFor="bedrooms">Bedrooms:</label>
-          <input className="form-control form-control-sm" id="bedrooms" 
+          <input className="form-control form-control-sm" id="bedrooms" type="number" pattern="[0-9]*"
             rows="1" name="bedrooms" value={this.state.bedrooms || ''} onChange={this.handleChange}/>
         </div>
 
         <div className="form-group">
           <label className="col" htmlFor="beds">Beds:</label>
-          <input className="form-control form-control-sm" id="beds" 
+          <input className="form-control form-control-sm" id="beds" type="number" pattern="[0-9]*"
             rows="1" name="beds" value={this.state.beds || ''} onChange={this.handleChange}/>
         </div>
 
         <div className="form-group">
           <label className="col" htmlFor="baths">Baths:</label>
-          <input className="form-control form-control-sm" id="baths" 
+          <input className="form-control form-control-sm" id="baths" type="number" pattern="[0-9]*"
             rows="1" name="baths" value={this.state.baths || ''} onChange={this.handleChange}/>
         </div>
 
