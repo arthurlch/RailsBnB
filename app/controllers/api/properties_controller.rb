@@ -11,8 +11,10 @@ module Api
     end
 
     def create 
+      
+      @user = User.find_by(id: params[:id])
 
-      @property = Property.new(property_params)
+      @property = @user.properties.create(property_params)
 
       if @property.save!
         render 'api/properties/create', status: :created
@@ -40,7 +42,7 @@ module Api
 
     def property_params 
       params.require(:property).permit(:id, :title, :description,
-      :property_type, :price_per_night, :max_guests, :bedrooms, :city, :country, :beds, :baths)
+      :property_type, :price_per_night, :max_guests, :bedrooms, :city, :country, :beds, :baths, :user)
     end
   end
 end
