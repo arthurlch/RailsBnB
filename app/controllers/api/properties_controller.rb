@@ -12,10 +12,8 @@ module Api
 
     def create 
       
-      @user = User.find_by(id: params[:id])
-
-      @property = @user.properties.create(property_params)
-
+      @property = Property.create(user: user, property_params: property_params)
+      
       if @property.save!
         render 'api/properties/create', status: :created
       else
