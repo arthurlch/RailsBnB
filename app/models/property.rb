@@ -3,9 +3,8 @@ class Property < ApplicationRecord
   # when declaring a foreign key (belgons to) it needs to be link in the controller 
   # ex person.avatar.attach(params[:avatar]) # ActionDispatch::Http::UploadedFile object
 
-  belongs_to :user 
+  belongs_to :user
   has_many :bookings
-
 
   validates :title, presence: true, length: { maximum: 70 }
   validates :description, presence: true, length: { maximum: 2000 }
