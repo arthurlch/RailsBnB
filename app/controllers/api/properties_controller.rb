@@ -10,18 +10,20 @@ module Api
       render 'api/properties/index', status: :ok
     end
 
-    def create 
       
-      @user = User.find_by(id: params[:id])
+    def create
+      
+      user = User.find_by(id: params[:user][:user_id])
+      return render json: { error: 'cannot find user' }, status: :not_found if !user
 
-      @property = @user.properties.create(property_params)
-
-      if @property.save!
+      begin
+        @property = Property.create({ user: user, property_params: property_params})
         render 'api/properties/create', status: :created
-      else
-        render json: { success: false }, status: :bad_request
+      rescue ArgumentError => e
+        render json: { error: e.message }, status: :bad_request
       end
     end
+    
 
     def update 
 
