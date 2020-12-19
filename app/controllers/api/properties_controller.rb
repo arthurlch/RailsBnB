@@ -17,7 +17,7 @@ module Api
       return render json: { error: 'cannot find user' }, status: :not_found if !user
 
       begin
-        @property = Property.create({ user: user, property_params: property_params})
+        @property = user.properties.create(property_params)
         render 'api/properties/create', status: :created
       rescue ArgumentError => e
         render json: { error: e.message }, status: :bad_request
