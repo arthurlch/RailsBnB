@@ -6,7 +6,7 @@ export default class UserPropertyForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = { 
-      id: 34,
+      id: 100,
       title: "",
       description: "",
       city: "",
