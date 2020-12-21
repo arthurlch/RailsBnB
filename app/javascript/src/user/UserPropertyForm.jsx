@@ -44,8 +44,11 @@ export default class UserPropertyForm extends React.Component {
           price_per_night: this.state.price_per_night,
           max_guests: this.state.max_guests,
           bedrooms: this.state.bedrooms,
-          beds: this.state.beds,
+          beds: this.state.beds, 
           baths: this.state.baths,
+        },
+        user: {
+          user_id: this.props.user_id
         }
       }),
       headers: {'Content-Type': 'application/json'}
