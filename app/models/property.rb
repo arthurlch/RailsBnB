@@ -4,7 +4,8 @@ class Property < ApplicationRecord
   # ex person.avatar.attach(params[:avatar]) # ActionDispatch::Http::UploadedFile object
 
   belongs_to :user
-  has_many :bookings
+  has_many :bookings 
+  has_many_attached :images
 
   validates :title, presence: true, length: { maximum: 70 }
   validates :description, presence: true, length: { maximum: 2000 }
