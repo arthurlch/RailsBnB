@@ -11,9 +11,11 @@ module Api
     end
 
     def create 
-      
-      @property = Property.create(user: user, property_params: property_params)
-      
+      user = User.find_by(id: params[:user][:user_id])
+      return render json: { error: 'cannot find user' }, status: :not_found if !user
+
+      @property = user.properties.create(property_params)
+  
       if @property.save!
         render 'api/properties/create', status: :created
       else

@@ -33,8 +33,8 @@ export default class UserPropertyForm extends React.Component {
    e.preventDefault()
   
     let formData = new FormData();
-    for (let i = 0; i < filetInputElement.files.length; i++) {
-      formData.append('property[images][]', fileInputElement.files[i]);
+    for (let i = 0; i < images.files.length; i++) {
+      formData.append('property[images][]', images.files[i]);
     }
 
     // Set other params in the formData
@@ -52,7 +52,7 @@ export default class UserPropertyForm extends React.Component {
     formData.set('property[baths]', this.state.baths);
     formData.set('user[user_id]', this.props.user_id);
 
-    fetch('/api/properties', safeCredentialsForm({
+    fetch(`/api/properties`, safeCredentialsForm({
       method: 'POST',
       body: formData,
     })).then(handleErrors)
@@ -60,9 +60,7 @@ export default class UserPropertyForm extends React.Component {
       console.log(error);
     })
   
-
-
-   fetch(`/api/properties`, safeCredentials({
+   /* fetch(`/api/properties`, safeCredentials({
     method: 'POST',
       body: JSON.stringify({
         property: {
@@ -87,20 +85,14 @@ export default class UserPropertyForm extends React.Component {
     .then(handleErrors)
     .catch(error => {
       console.log(error);
-    })
-  }
+    }) */ 
+  } 
   
  render () {
    return(
      <div className="py-4 my-4 row">
       <form onSubmit={this.handleSubmit} id="userPropertyForm">
-        
-      <div className="form-group">
-          <label className="col" htmlFor="image">Image:</label>
-          <input className="form-control form-control-sm" id="image" 
-            rows="1" name="image" value={this.state.image || ''} onChange={this.handleChange}/>
-        </div>
-
+  
         <div className="form-group">
           <label className="col" htmlFor="title">Name:</label>
           <input className="form-control form-control-sm" id="title" 
