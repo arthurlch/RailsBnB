@@ -7,7 +7,7 @@ export default class UserPropertyForm extends React.Component {
     super(props)
     this.state = { 
       id: 100,
-      image: [],
+      images: [],
       title: "",
       description: "",
       city: "",
@@ -162,11 +162,16 @@ export default class UserPropertyForm extends React.Component {
             rows="1" name="baths" value={this.state.baths || ''} onChange={this.handleChange}/>
         </div>
 
+        <div className="form-group">
+          <label className="col" htmlFor="images">Images:</label>
+          <input className="form-control form-control-sm" id="images" type="file"
+            rows="1" name="images" value={this.state.images || ''} onChange={this.handleChange}/>
+        </div>
+
         <button className="btn btn-sm btn-danger" type="submit">Submit</button>
       </form>
      </div>
     
    )
  }
-
 }
