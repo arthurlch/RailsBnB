@@ -1,5 +1,5 @@
 import React from 'react' 
-import { safeCredentials, handleErrors } from '@utils/fetchHelper';
+import { safeCredentials, handleErrors, safeCredentialsForm } from '@utils/fetchHelper';
 
 // fetch from property api and post to property api instead of user.properties 
 export default class UserPropertyForm extends React.Component {
@@ -7,6 +7,7 @@ export default class UserPropertyForm extends React.Component {
     super(props)
     this.state = { 
       id: 100,
+      images: [],
       title: "",
       description: "",
       city: "",
@@ -30,8 +31,36 @@ export default class UserPropertyForm extends React.Component {
 
   handleSubmit(e) {
    e.preventDefault()
+  
+    let formData = new FormData();
+    for (let i = 0; i < images.files.length; i++) {
+      formData.append('property[images][]', images.files[i]);
+    }
 
-   fetch(`/api/properties`, safeCredentials({
+    // Set other params in the formData
+    formData.set('property[id]', this.state.id);
+    formData.set('property[title]', this.state.title);
+    formData.set('property[description]', this.state.description);
+    formData.set('property[title]', this.state.title);
+    formData.set('property[city]', this.state.city);
+    formData.set('property[country]', this.state.country);
+    formData.set('property[property_type]', this.state.property_type);
+    formData.set('property[price_per_night]', this.state.price_per_night);
+    formData.set('property[max_guests]', this.state.max_guests);
+    formData.set('property[bedrooms]', this.state.bedrooms);
+    formData.set('property[beds]', this.state.beds);
+    formData.set('property[baths]', this.state.baths);
+    formData.set('user[user_id]', this.props.user_id);
+
+    fetch(`/api/properties`, safeCredentialsForm({
+      method: 'POST',
+      body: formData,
+    })).then(handleErrors)
+    .catch(error => {
+      console.log(error);
+    })
+  
+   /* fetch(`/api/properties`, safeCredentials({
     method: 'POST',
       body: JSON.stringify({
         property: {
@@ -56,14 +85,14 @@ export default class UserPropertyForm extends React.Component {
     .then(handleErrors)
     .catch(error => {
       console.log(error);
-    })
-  }
+    }) */ 
+  } 
   
  render () {
    return(
      <div className="py-4 my-4 row">
       <form onSubmit={this.handleSubmit} id="userPropertyForm">
-        
+  
         <div className="form-group">
           <label className="col" htmlFor="title">Name:</label>
           <input className="form-control form-control-sm" id="title" 
@@ -125,11 +154,16 @@ export default class UserPropertyForm extends React.Component {
             rows="1" name="baths" value={this.state.baths || ''} onChange={this.handleChange}/>
         </div>
 
+        <div className="form-group">
+          <label className="col" htmlFor="images">Images:</label>
+          <input className="form-control form-control-sm" id="images" type="file"
+            rows="1" name="images" value={this.state.images || ''} onChange={this.handleChange}/>
+        </div>
+
         <button className="btn btn-sm btn-danger" type="submit">Submit</button>
       </form>
      </div>
     
    )
  }
-
 }
