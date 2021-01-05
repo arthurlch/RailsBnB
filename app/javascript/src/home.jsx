@@ -15,6 +15,7 @@ class Home extends React.Component {
     next_page: null,
     loading: true,
   }
+  
   componentDidMount() {
     fetch('/api/properties?page=1')
       .then(handleErrors)
