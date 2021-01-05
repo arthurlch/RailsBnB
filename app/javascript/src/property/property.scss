@@ -3,6 +3,9 @@
   background-size: cover;
   background-position: center;
   @media (min-width: 768px) {
-    height: 400px;
+    height:500px;
+    width: fit-content;
+    padding: auto;
+    margin: auto;
   }
 }

@@ -24,14 +24,19 @@ module Api
     end
 
     def update 
+      @property = Property.find_by(id: params[:id])
 
+      @last_property = Property.order(id: :desc).first
+      return render json: { error: 'not_found' }, status: :not_found if !@properties
+
+      render 'api/properties/update', status: :ok
     end
 
     def show
       @property = Property.find_by(id: params[:id])
       return render json: { error: 'not_found' }, status: :not_found if !@property
-
       render 'api/properties/show', status: :ok
+      
     end
 
     private
