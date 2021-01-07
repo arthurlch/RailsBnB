@@ -2,7 +2,7 @@ module Api
   class PropertiesController < ApplicationController
     # https://api.rubyonrails.org/classes/ActiveStorage/Attached/One.html
     skip_before_action :verify_authenticity_token
-
+    
     def index
       @properties = Property.order(created_at: :desc).page(params[:page]).per(6)
       return render json: { error: 'not_found' }, status: :not_found if !@properties
@@ -21,17 +21,21 @@ module Api
       else
         render json: { success: false }, status: :bad_request
       end
+
+      @last_property = Property.order(id: :desc).first
+      return render json: { error: 'not_found' }, status: :not_found if !@last_property
     end
 
     def update 
-
+      @property = Property.find_by(id: params[:id])
+      render 'api/properties/update', status: :ok
     end
 
     def show
       @property = Property.find_by(id: params[:id])
       return render json: { error: 'not_found' }, status: :not_found if !@property
-
       render 'api/properties/show', status: :ok
+      
     end
 
     private

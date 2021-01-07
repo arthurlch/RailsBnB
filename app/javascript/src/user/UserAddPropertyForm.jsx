@@ -18,7 +18,9 @@ export default class UserPropertyForm extends React.Component {
       bedrooms: "",
       beds: "",
       baths: "",
+      image_url: ""
     }
+    
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -59,38 +61,12 @@ export default class UserPropertyForm extends React.Component {
     .catch(error => {
       console.log(error);
     })
-  
-   /* fetch(`/api/properties`, safeCredentials({
-    method: 'POST',
-      body: JSON.stringify({
-        property: {
-          id: this.state.id,
-          title: this.state.title,
-          description: this.state.description,
-          city: this.state.city,
-          country: this.state.country,
-          property_type: this.state.property_type,
-          price_per_night: this.state.price_per_night,
-          max_guests: this.state.max_guests,
-          bedrooms: this.state.bedrooms,
-          beds: this.state.beds, 
-          baths: this.state.baths,
-        },
-        user: {
-          user_id: this.props.user_id
-        }
-      }),
-      headers: {'Content-Type': 'application/json'}
-  }))
-    .then(handleErrors)
-    .catch(error => {
-      console.log(error);
-    }) */ 
   } 
   
  render () {
    return(
-     <div className="py-4 my-4 row">
+    
+    <div className="py-4 my-4 row">
       <form onSubmit={this.handleSubmit} id="userPropertyForm">
   
         <div className="form-group">
@@ -162,8 +138,7 @@ export default class UserPropertyForm extends React.Component {
 
         <button className="btn btn-sm btn-danger" type="submit">Submit</button>
       </form>
-     </div>
-    
-   )
+    </div>
+  )
  }
 }

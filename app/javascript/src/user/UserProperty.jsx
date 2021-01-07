@@ -1,5 +1,5 @@
 import React from 'react';
-import UserPropertyForm from './UserPropertyForm'
+import UserAddPropertyForm from './UserAddPropertyForm'
 import { handleErrors } from '@utils/fetchHelper';
 
 class UserProperty extends React.Component  {
@@ -79,7 +79,7 @@ class UserProperty extends React.Component  {
           <button className="btn btn-sm" onClick={this._showForm.bind(null, false)}>Hide Form</button>
           { this.state.showForm && (
             <div className="UserPropertyForm">
-              <UserPropertyForm user_id={id}/>
+              <UserAddPropertyForm user_id={id}/>
             </div>)
             }
         </div>
