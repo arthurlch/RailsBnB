@@ -21,14 +21,13 @@ module Api
       else
         render json: { success: false }, status: :bad_request
       end
+
+      @last_property = Property.order(id: :desc).first
+      return render json: { error: 'not_found' }, status: :not_found if !@last_property
     end
 
     def update 
       @property = Property.find_by(id: params[:id])
-
-      @last_property = Property.order(id: :desc).first
-      return render json: { error: 'not_found' }, status: :not_found if !@last_property
-
       render 'api/properties/update', status: :ok
     end
 
