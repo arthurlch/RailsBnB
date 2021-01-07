@@ -20,6 +20,7 @@ export default class UserPropertyForm extends React.Component {
       baths: "",
       image_url: ""
     }
+    
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -64,7 +65,8 @@ export default class UserPropertyForm extends React.Component {
   
  render () {
    return(
-     <div className="py-4 my-4 row">
+    
+    <div className="py-4 my-4 row">
       <form onSubmit={this.handleSubmit} id="userPropertyForm">
   
         <div className="form-group">
@@ -136,8 +138,7 @@ export default class UserPropertyForm extends React.Component {
 
         <button className="btn btn-sm btn-danger" type="submit">Submit</button>
       </form>
-     </div>
-    
-   )
+    </div>
+  )
  }
 }
