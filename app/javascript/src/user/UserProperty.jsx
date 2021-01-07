@@ -11,7 +11,7 @@ class UserProperty extends React.Component  {
       show: false
     }
     this.getUser = this.getUser.bind(this)
-    this.addProperty = this.addProperty.bind(this)
+    // this.addProperty = this.addProperty.bind(this)
   }
     
   
@@ -30,10 +30,20 @@ class UserProperty extends React.Component  {
       }) 
   }
 
-  addProperty(newProperty) {
+/*  addProperty(newProperty) {
     this.setState(state => ({
       properties: [...state.properties, new newProperty]
     }))
+  } */
+
+  updateProperty(id, updatedProperty) {
+    const updatedProperty = this.state.properties.map(property => {
+      if(property.id === id){
+        return {...property, property: updatedProperty}
+      } else {
+        return properties
+      }
+    })
   }
 
   _showForm = (bool) => {
@@ -61,14 +71,6 @@ class UserProperty extends React.Component  {
           <ul className="my-4 py-3" key={property.id}> 
             <li><span className="font-weight-bold">Name:</span> {property.title}</li>
             <li>Description: {property.description}</li>
-            <li>City: {property.city}</li>
-            <li>Country: {property.country}</li>
-            <li>type: {property.property_type}</li>
-            <li>Price per night: {property.price_per_night}</li>
-            <li>Max of guest: {property.max_guests}</li>
-            <li>Bedrooms: {property.bedrooms}</li>
-            <li>Beds: {property.beds}</li>
-            <li>Baths: {property.baths}</li>
             <button className="btn btn-sm btn-info">Edit</button>
           </ul>)} 
         </div>
@@ -86,7 +88,6 @@ class UserProperty extends React.Component  {
 
       </div>
     )
-
   }
 }
 

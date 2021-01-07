@@ -1,12 +1,12 @@
 import React from 'react' 
-import { safeCredentials, handleErrors, safeCredentialsForm } from '@utils/fetchHelper';
+import { handleErrors, safeCredentialsForm } from '@utils/fetchHelper';
 
 // fetch from property api and post to property api instead of user.properties 
 export default class UserPropertyForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = { 
-      id: 100,
+      id: 131,
       images: [],
       title: "",
       description: "",
@@ -32,8 +32,7 @@ export default class UserPropertyForm extends React.Component {
   }
 
   handleSubmit(e) {
-   e.preventDefault()
-  
+   // e.preventDefault()
     let formData = new FormData();
     for (let i = 0; i < images.files.length; i++) {
       formData.append('property[images][]', images.files[i]);

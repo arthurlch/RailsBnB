@@ -31,7 +31,7 @@ export default class UserEditPropertyForm extends React.Component {
 
   handleSubmit(event) {
       
-  fetch(`/api/properties`, safeCredentialsForm({
+    fetch(`/api/properties`, safeCredentialsForm({
       method: 'PUT',
       body: formData,
     })).then(handleErrors)
