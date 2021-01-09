@@ -9,3 +9,12 @@
     margin: auto;
   }
 }
+
+.property-image-url {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  @media (min-width: 768px) {
+    height: 400px;
+  }
+}

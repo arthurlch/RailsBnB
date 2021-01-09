@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 import UserAddPropertyForm from './UserAddPropertyForm'
-import { handleErrors } from '@utils/fetchHelper';
+import { handleErrors } from '@utils/fetchHelper'
 
 class UserProperty extends React.Component  {
   constructor(props) {
@@ -11,10 +11,8 @@ class UserProperty extends React.Component  {
       show: false
     }
     this.getUser = this.getUser.bind(this)
-    // this.addProperty = this.addProperty.bind(this)
   }
     
-  
   componentDidMount() {
     this.getUser()
   }
@@ -29,13 +27,6 @@ class UserProperty extends React.Component  {
         })
       }) 
   }
-
-/*  addProperty(newProperty) {
-    this.setState(state => ({
-      properties: [...state.properties, new newProperty]
-    }))
-  } */
-
 
   _showForm = (bool) => {
     this.setState({
@@ -76,7 +67,6 @@ class UserProperty extends React.Component  {
             </div>)
             }
         </div>
-
       </div>
     )
   }

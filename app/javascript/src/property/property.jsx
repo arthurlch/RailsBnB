@@ -42,16 +42,19 @@ class Property extends React.Component {
       baths,
       images,
       user,
+      image_url
     } = property
 
 
     return (
       <Layout>
-        <div className="property-image mb-3">
+        <div className="property-image-url" style={{ backgroundImage: `url(${image_url})` }} />
+        <div className="property-image">
         {images.map(image => {
-          return(<img className="property-image mb-3" src={image.image_url}/>)
+          return(<img className="property-image" src={image.image_url}/>)
         })}
         </div>
+        <div></div>
         <div className="container">
           <div className="row">
             <div className="info col-12 col-lg-7">
