@@ -36,15 +36,6 @@ class UserProperty extends React.Component  {
     }))
   } */
 
-  updateProperty(id, updatedProperty) {
-    const updatedProperty = this.state.properties.map(property => {
-      if(property.id === id){
-        return {...property, property: updatedProperty}
-      } else {
-        return properties
-      }
-    })
-  }
 
   _showForm = (bool) => {
     this.setState({
