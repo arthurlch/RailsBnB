@@ -1,4 +1,5 @@
 import React from 'react'
+import './user.scss'
 import UserAddPropertyForm from './UserAddPropertyForm'
 import { handleErrors } from '@utils/fetchHelper'
 

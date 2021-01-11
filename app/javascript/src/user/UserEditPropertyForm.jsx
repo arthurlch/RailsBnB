@@ -3,21 +3,21 @@ import {handleErrors, safeCredentialsForm} from '@utils/fetchHelper';
 
 export default class UserEditPropertyForm extends React.Component {
   constructor(props) {
-      super(props)
-      this.state = {
-        id: "", 
-        images: [],
-        title: "",
-        description: "",
-        city: "",
-        country: "",
-        property_type: "",
-        price_per_night: "",
-        max_guests: "",
-        bedrooms: "",
-        beds: "",
-        baths: "",
-        image_url: ""
+    super(props)
+    this.state = {
+      id: "", 
+      images: [],
+      title: "",
+      description: "",
+      city: "",
+      country: "",
+      property_type: "",
+      price_per_night: "",
+      max_guests: "",
+      bedrooms: "",
+      beds: "",
+      baths: "",
+      image_url: ""
       }
       this.handleChange = this.handleChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
