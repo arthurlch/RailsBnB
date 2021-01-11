@@ -1,4 +1,5 @@
 import React from 'react'
+import './user.scss'
 import UserAddPropertyForm from './UserAddPropertyForm'
 import { handleErrors } from '@utils/fetchHelper'
 
@@ -16,7 +17,7 @@ class UserProperty extends React.Component  {
   componentDidMount() {
     this.getUser()
   }
-
+  
   getUser() {
     fetch(`/api/users/${this.props.user_id}`)
       .then(handleErrors)
@@ -53,6 +54,14 @@ class UserProperty extends React.Component  {
           <ul className="my-4 py-3" key={property.id}> 
             <li><span className="font-weight-bold">Name:</span> {property.title}</li>
             <li>Description: {property.description}</li>
+            <li>City: {property.city}</li>
+            <li>Country: {property.country}</li>
+            <li>type: {property.property_type}</li>
+            <li>Price per night: {property.price_per_night}</li>
+            <li>Max of guest: {property.max_guests}</li>
+            <li>Bedrooms: {property.bedrooms}</li>
+            <li>Beds: {property.beds}</li>
+            <li>Baths: {property.baths}</li>
             <button className="btn btn-sm btn-info">Edit</button>
           </ul>)} 
         </div>
