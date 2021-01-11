@@ -5,7 +5,6 @@ export default class UserEditPropertyForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      id: "", 
       images: [],
       title: "",
       description: "",
@@ -30,7 +29,28 @@ export default class UserEditPropertyForm extends React.Component {
   }
 
   handleSubmit(event) {
-    fetch(`/api/properties`, safeCredentialsForm({
+    
+    let formData = new FormData();
+    for (let i = 0; i < images.files.length; i++) {
+      formData.append('property[images][]', images.files[i]);
+    }
+
+    // Set other params in the formData
+    formData.set('property[id]', this.state.id);
+    formData.set('property[title]', this.state.title);
+    formData.set('property[description]', this.state.description);
+    formData.set('property[title]', this.state.title);
+    formData.set('property[city]', this.state.city);
+    formData.set('property[country]', this.state.country);
+    formData.set('property[property_type]', this.state.property_type);
+    formData.set('property[price_per_night]', this.state.price_per_night);
+    formData.set('property[max_guests]', this.state.max_guests);
+    formData.set('property[bedrooms]', this.state.bedrooms);
+    formData.set('property[beds]', this.state.beds);
+    formData.set('property[baths]', this.state.baths);
+    formData.set('user[user_id]', this.props.user_id);
+
+    fetch(`/api/properties/${this.props.id}`, safeCredentialsForm({
       method: 'PUT',
       body: formData,
     })).then(handleErrors)
@@ -38,6 +58,8 @@ export default class UserEditPropertyForm extends React.Component {
       console.log(error);
     })
   }
+
+  
 
   render() {
       
