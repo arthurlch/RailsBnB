@@ -29,6 +29,7 @@ module Api
     def update 
       @property = Property.find_by(id: params[:id])
       render 'api/properties/update', status: :ok
+      @last_property = Property.order(id: :desc).first
     end
 
     def show
