@@ -1,6 +1,7 @@
 import React from 'react'
 import './user.scss'
 import UserAddPropertyForm from './UserAddPropertyForm'
+import UserEditPropertyForm from './UserEditPropertyForm'
 import { handleErrors } from '@utils/fetchHelper'
 
 class UserProperty extends React.Component  {
@@ -62,7 +63,11 @@ class UserProperty extends React.Component  {
             <li>Bedrooms: {property.bedrooms}</li>
             <li>Beds: {property.beds}</li>
             <li>Baths: {property.baths}</li>
-            <button className="btn btn-sm btn-info">Edit</button>
+            <div>
+              <button className="btn btn-sm btn-info mx-3" onClick={this._showForm.bind(null, true)}>
+                Edit Property
+              </button>
+            </div>
           </ul>)} 
         </div>
  
