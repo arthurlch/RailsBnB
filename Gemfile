@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.2'
+ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -30,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'kaminari'
+gem 'nokogiri', '1.10.10'
+
 # stripe 
 gem 'stripe'
 # Use Capistrano for deployment
@@ -49,7 +51,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.8'
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.4.2'
 end
 
 group :development do
