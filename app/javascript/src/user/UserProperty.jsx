@@ -1,7 +1,6 @@
 import React from 'react'
 import './user.scss'
 import UserAddPropertyForm from './UserAddPropertyForm'
-import UserEditPropertyForm from './UserEditPropertyForm'
 import { handleErrors } from '@utils/fetchHelper'
 
 class UserProperty extends React.Component  {
