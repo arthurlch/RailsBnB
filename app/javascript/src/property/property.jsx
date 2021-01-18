@@ -2,6 +2,7 @@
 import React from 'react';
 import Layout from '@src/layout';
 import BookingWidget from './bookingWidget';
+import EditPropertyWidget from './EditPropertyWidget'
 import { handleErrors } from '@utils/fetchHelper';
 import './property.scss';
 
@@ -74,6 +75,16 @@ class Property extends React.Component {
               </div>
               <hr />
               <p>{description}</p>
+              
+              <button className="btn btn-sm btn-info mx-3" onClick={this._showForm.bind(null, true)}>Edit Property</button>
+              <button className="btn btn-sm" onClick={this._showForm.bind(null, false)}>Hide Form</button>
+              { this.state.showForm && (
+                <div className="EditPropertyWidget">
+                  <EditPropertyWidget property_id={id}/>
+                </div>)
+                }
+
+
             </div>
             <div className="col-12 col-lg-5">
               <BookingWidget property_id={id} price_per_night={price_per_night} />
