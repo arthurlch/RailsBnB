@@ -1,6 +1,6 @@
 import React from 'react'
 import './user.scss'
-import UserAddPropertyForm from './UserAddPropertyForm'
+import AddPropertyWidget from './AddPropertyWidget'
 import { handleErrors } from '@utils/fetchHelper'
 
 class UserProperty extends React.Component  {
@@ -43,7 +43,8 @@ class UserProperty extends React.Component  {
 
     const {
       id,
-      properties
+      properties,
+      last_property
     } = user  
 
     return (
@@ -69,14 +70,14 @@ class UserProperty extends React.Component  {
             </div>
           </ul>)} 
         </div>
- 
+         
         <div>
           <h4 className="py-4 my-4">Become a host today and add a property to your account!</h4>
           <button className="btn btn-sm btn-info mx-3" onClick={this._showForm.bind(null, true)}>Add Property</button>
           <button className="btn btn-sm" onClick={this._showForm.bind(null, false)}>Hide Form</button>
           { this.state.showForm && (
             <div className="UserPropertyForm">
-              <UserAddPropertyForm user_id={id}/>
+              <AddPropertyWidget user_id={id}/>
             </div>)
             }
         </div>

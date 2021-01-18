@@ -1,12 +1,11 @@
 import React from 'react' 
 import { handleErrors, safeCredentialsForm } from '@utils/fetchHelper';
-
 // fetch from property api and post to property api instead of user.properties 
 export default class UserPropertyForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = { 
-      id: title,
+      id: "",
       images: [],
       title: "",
       description: "",
