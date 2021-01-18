@@ -31,7 +31,7 @@ export default class UserPropertyForm extends React.Component {
   }
 
   handleSubmit(e) {
-   // e.preventDefault()
+    e.preventDefault()
     let formData = new FormData();
     for (let i = 0; i < images.files.length; i++) {
       formData.append('property[images][]', images.files[i]);

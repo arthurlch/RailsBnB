@@ -1,11 +1,10 @@
 import React from 'react' 
 import { handleErrors, safeCredentialsForm } from '@utils/fetchHelper';
 // fetch from property api and post to property api instead of user.properties 
-export default class UserPropertyForm extends React.Component {
+export default class EditPropertyWidget extends React.Component {
   constructor(props) {
     super(props)
     this.state = { 
-      id: "",
       images: [],
       title: "",
       description: "",
@@ -37,7 +36,7 @@ export default class UserPropertyForm extends React.Component {
     }
 
     // Set other params in the formData
-    formData.set('property[id]', this.props.id);
+    formData.set('property[id]', this.props.property_id);
     formData.set('property[title]', this.state.title);
     formData.set('property[description]', this.state.description);
     formData.set('property[title]', this.state.title);
@@ -49,9 +48,8 @@ export default class UserPropertyForm extends React.Component {
     formData.set('property[bedrooms]', this.state.bedrooms);
     formData.set('property[beds]', this.state.beds);
     formData.set('property[baths]', this.state.baths);
-    formData.set('user[user_id]', this.props.user_id);
 
-    fetch(`/api/properties/${this.pros.id}`, safeCredentialsForm({
+    fetch(`/api/properties/${this.props.property_id}`, safeCredentialsForm({
       method: 'PUT',
       body: formData,
     })).then(handleErrors)
@@ -64,12 +62,12 @@ export default class UserPropertyForm extends React.Component {
    return(
     
     <div className="py-4 my-4 row">
-      <form onSubmit={this.handleSubmit} id="userPropertyForm">
+      <form onSubmit={this.handleSubmit} id="EditPropertyWidget">
   
         <div className="form-group">
           <label className="col" htmlFor="title">Name:</label>
           <input className="form-control form-control-sm" id="title" 
-            rows="1" name="title" value={this.state.title || ''} onChange={this.handleChange}/>
+            rows="1" name="title" value={this.state.title} onChange={this.handleChange}/>
         </div>
 
         <div className="form-group">

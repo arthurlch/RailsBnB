@@ -1,5 +1,3 @@
-json.last_property @last_property
-
 json.property do
   json.id @property.id
   json.title @property.title

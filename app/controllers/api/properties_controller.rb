@@ -13,8 +13,8 @@ module Api
     def create 
       user = User.find_by(id: params[:user][:user_id])
       return render json: { error: 'cannot find user' }, status: :not_found if !user
-
-      @property = user.properties.create(property_params)
+      
+      @property = user.properties.create(property_params) 
   
       if @property.save!
         render 'api/properties/create', status: :created
@@ -26,7 +26,11 @@ module Api
 
     def update 
       @property = Property.find_by(id: params[:id])
-      render 'api/properties/update', status: :ok
+      if @property.update!(property_params)
+        render 'api/properties/update', status: :ok
+      else 
+        render json: { success: false }, status: :bad_request
+      end
     end
 
     def show

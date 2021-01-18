@@ -23,6 +23,13 @@ class Property extends React.Component {
       }) 
   }
 
+  _showForm = (bool) => {
+    this.setState({
+      showForm: bool
+    });
+  }
+
+
   render () {
     const { property, loading } = this.state;
     if (loading) {
@@ -83,8 +90,6 @@ class Property extends React.Component {
                   <EditPropertyWidget property_id={id}/>
                 </div>)
                 }
-
-
             </div>
             <div className="col-12 col-lg-5">
               <BookingWidget property_id={id} price_per_night={price_per_night} />
