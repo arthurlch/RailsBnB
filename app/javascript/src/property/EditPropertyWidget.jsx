@@ -16,8 +16,8 @@ export default class EditPropertyWidget extends React.Component {
       bedrooms: "",
       beds: "",
       baths: "",
-      image_url: ""
     }
+    
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -29,12 +29,9 @@ export default class EditPropertyWidget extends React.Component {
   }
 
   handleSubmit(e) {
-   // e.preventDefault()
+   e.preventDefault()
     let formData = new FormData();
-    for (let i = 0; i < images.files.length; i++) {
-      formData.append('property[images][]', images.files[i]);
-    }
-
+    
     // Set other params in the formData
     formData.set('property[id]', this.props.property_id);
     formData.set('property[title]', this.state.title);
@@ -59,6 +56,8 @@ export default class EditPropertyWidget extends React.Component {
   } 
   
  render () {
+  
+  
    return(
     
     <div className="py-4 my-4 row">
@@ -125,11 +124,6 @@ export default class EditPropertyWidget extends React.Component {
             rows="1" name="baths" value={this.state.baths || ''} onChange={this.handleChange}/>
         </div>
 
-        <div className="form-group">
-          <label className="col" htmlFor="images">Images:</label>
-          <input className="form-control form-control-sm" id="images" type="file"
-            rows="1" name="images" value={this.state.images || ''} onChange={this.handleChange}/>
-        </div>
 
         <button className="btn btn-sm btn-danger" type="submit">Submit</button>
       </form>

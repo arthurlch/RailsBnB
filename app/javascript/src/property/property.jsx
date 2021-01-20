@@ -8,8 +8,8 @@ import './property.scss';
 
 class Property extends React.Component {
   state = {
-    property: {},
-    loading: true,
+  property: {},
+  loading: true,
   }
 
   componentDidMount() {
@@ -20,15 +20,14 @@ class Property extends React.Component {
           property: data.property,
           loading: false,
         })
-      }) 
-  }
+    }) 
+  } 
 
   _showForm = (bool) => {
     this.setState({
       showForm: bool
     });
   }
-
 
   render () {
     const { property, loading } = this.state;
@@ -53,7 +52,6 @@ class Property extends React.Component {
       image_url
     } = property
 
-
     return (
       <Layout>
         <div className="property-image-url" style={{ backgroundImage: `url(${image_url})` }} />
@@ -74,6 +72,7 @@ class Property extends React.Component {
               <div>
                 <p className="mb-0 text-capitalize"><b>{property_type}</b></p>
                 <p>
+                  <span className="mr-3">{country}</span>
                   <span className="mr-3">{max_guests} guests</span>
                   <span className="mr-3">{bedrooms} bedroom</span>
                   <span className="mr-3">{beds} bed</span>
@@ -87,7 +86,8 @@ class Property extends React.Component {
               <button className="btn btn-sm" onClick={this._showForm.bind(null, false)}>Hide Form</button>
               { this.state.showForm && (
                 <div className="EditPropertyWidget">
-                  <EditPropertyWidget property_id={id}/>
+                  <p className="mt-4">Please fill the whole form before sumbmiting</p>
+                  <EditPropertyWidget property_id={id} />
                 </div>)
                 }
             </div>
