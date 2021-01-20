@@ -29,14 +29,20 @@ module Api
 
     def show
       booking = Booking.last
-      booking.is_paid? # returns true or false
+      
+      if booking.is_paid?
+        render json: {success: 'paid' }
+      else 
+        render json: {error: 'not paid'}
+      end
+
       return render json: { error: 'cannot find booking' }, status: :not_found if !booking
     end
 
     private
 
     def booking_params
-      params.require(:booking).permit(:property_id, :start_date, :end_date)
+      params.require(:booking).permit(:property_id, :start_date, :end_date, :is_paid)
     end
   end
 end

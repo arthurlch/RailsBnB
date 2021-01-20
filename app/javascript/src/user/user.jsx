@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '@src/layout';
 import { handleErrors } from '@utils/fetchHelper';
 import UserProperty from './UserProperty'
+import UserBooking from './UserBooking'
 
 
 
@@ -38,34 +39,14 @@ class User extends React.Component  {
       bookings
     } = user  
 
-
     return (
       <Layout>    
         <div className="container pt-4 mt-4 ">
         <div className="row pt-4 mt-4">
-
-          <h2>User Profile</h2>
+          <h2>User Profile : {user.username}</h2>
           <div className="col-md-12 pt-4 mt-4">
-            <div className="my-3">
-              <h3>Name:</h3>
-              <p>{user.username}</p>  
-            </div>
-            <div className="my-3">
-              <h3>Email:</h3>
-              <p>{user.email}</p>
-            </div>
-
             <UserProperty user_id={id} />
-
-            <div className="my-3">
-            <h3>Your Booking</h3>
-            {bookings.map(booking => 
-            <p key={booking.start_date}> Booking finish the  {booking.end_date} </p>)} 
-            </div>
-            
-          </div>
-          <div className="col-md-6">
-
+            <UserBooking user_id={id} />
           </div>
         </div>
           

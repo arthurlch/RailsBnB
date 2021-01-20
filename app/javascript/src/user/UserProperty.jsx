@@ -44,13 +44,12 @@ class UserProperty extends React.Component  {
     const {
       id,
       properties,
-      last_property
     } = user  
 
     return (
       <div className="">
         <div className="my-3">
-          <h3>Your Properties:</h3>
+          <h3>My Properties:</h3>
           {properties.map(property => 
           <ul className="my-4 py-3" key={property.id}> 
             <li><span className="font-weight-bold">Name:</span> {property.title}</li>
