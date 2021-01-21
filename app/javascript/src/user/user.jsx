@@ -4,7 +4,7 @@ import Layout from '@src/layout';
 import { handleErrors } from '@utils/fetchHelper';
 import UserProperty from './UserProperty'
 import UserBooking from './UserBooking'
-
+// memo router needed !!!!!!!!!!
 
 
 class User extends React.Component  {
