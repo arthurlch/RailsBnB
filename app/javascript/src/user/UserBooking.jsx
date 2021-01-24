@@ -54,7 +54,7 @@ class UserBooking extends React.Component  {
           <ul className="my-4 py-3" key={booking.id}> 
             <li>{booking.start_date}</li>
             <li>{booking.end_date}</li>
-            <li>{booking.is_paid}</li>
+            <li>{booking.is_paid ?  "paid" : "not paid"}</li>             
           </ul>)} 
         </div>
       </div>

@@ -44,6 +44,7 @@ class UserProperty extends React.Component  {
     const {
       id,
       properties,
+      bookings
     } = user  
 
     return (
