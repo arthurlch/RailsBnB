@@ -46,7 +46,7 @@ class User extends React.Component  {
           <h2>User Profile : {user.username}</h2>
           <div className="col-md-12 pt-4 mt-4">
             <UserProperty user_id={id} />
-            <UserBooking user_id={id} booking_id={booking_id} />
+            <UserBooking user_id={id} booking_id={id} />
           </div>
         </div>
         </div> 

@@ -7,6 +7,7 @@ class UserBooking extends React.Component  {
     super(props)
     this.state = {
       user: {},
+      booking_id: {},
       loading: true,
       show: false
     }
@@ -52,24 +53,12 @@ class UserBooking extends React.Component  {
     const { user, loading } = this.state;
     if (loading) {
       return <p>loading...</p>;
-    };
-
-    const {
-      id,
-      properties,
-      bookings
-    } = user  
+    }; 
 
     return (
       <div className="">
         <div className="my-3">
-          <h3>My Bookings:</h3>
-          {bookings.map(booking => 
-          <ul className="my-4 py-3" key={booking.id}> 
-            <li>{booking.start_date}</li>
-            <li>{booking.end_date}</li>
-            <li>{booking.is_paid}</li>             
-          </ul>)} 
+        
         </div>
       </div>
     )
