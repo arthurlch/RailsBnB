@@ -11,10 +11,12 @@ class UserBooking extends React.Component  {
       show: false
     }
     this.getUser = this.getUser.bind(this)
+    this.getBooking = this.getBooking.bind(this)
   }
     
   componentDidMount() {
     this.getUser()
+    this.getBooking()
   }
   
   getUser() {
@@ -28,6 +30,18 @@ class UserBooking extends React.Component  {
       }) 
   }
 
+  getBooking() {
+    fetch(`/api/bookings/${this.props.booking_id}`)
+      .then(handleErrors)
+      .then(data => {
+        this.setState({
+          user: data.booking,
+          loading: false,
+        })
+      }) 
+  }
+
+  
   _showForm = (bool) => {
     this.setState({
       showForm: bool
@@ -54,7 +68,7 @@ class UserBooking extends React.Component  {
           <ul className="my-4 py-3" key={booking.id}> 
             <li>{booking.start_date}</li>
             <li>{booking.end_date}</li>
-            <li>{booking.is_paid ?  "paid" : "not paid"}</li>             
+            <li>{booking.is_paid}</li>             
           </ul>)} 
         </div>
       </div>
