@@ -1,7 +1,6 @@
 import React from 'react'
 import './user.scss'
 import { handleErrors } from '@utils/fetchHelper'
-import { data } from 'jquery'
 
 class UserBooking extends React.Component  {
   constructor(props) {
@@ -36,12 +35,12 @@ class UserBooking extends React.Component  {
     fetch('/api/bookings')
       .then(handleErrors)
       .then(data => {
+        console.log(data)
         this.setState({
           booking: data.booking,
           loading: false,
         })
       }) 
-      .then(console.log(data))  
   }
 
   

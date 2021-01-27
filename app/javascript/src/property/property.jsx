@@ -1,6 +1,6 @@
 // property.jsx
 import React from 'react';
-import Layout from '../charge/node_modules/@src/layout';
+import Layout from '@src/layout';
 import BookingWidget from './bookingWidget';
 import EditPropertyWidget from './EditPropertyWidget'
 import { handleErrors } from '@utils/fetchHelper';
