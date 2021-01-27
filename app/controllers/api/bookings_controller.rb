@@ -27,11 +27,9 @@ module Api
     def index 
       token = cookies.signed[:airbnb_session_token]
       session = Session.find_by(token: token)
-      return render json: { error: 'user not logged in'}, status: :unauthorized if !session
-
-      properties = session.user.properties
-
-      render 'api/properties/index', status: :ok
+      return render json: { error: 'user not logged in' }, status: :unauthorized if !session
+      @bookings = session.user.bookings
+      render 'api/bookings/index', status: :ok
     end
 
     def show

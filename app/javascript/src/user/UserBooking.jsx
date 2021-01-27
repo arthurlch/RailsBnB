@@ -51,7 +51,7 @@ class UserBooking extends React.Component  {
   }
 
   render() {
-    const { user, loading } = this.state;
+    const { booking, user, loading } = this.state;
     if (loading) {
       return <p>loading...</p>;
     }; 
@@ -59,7 +59,7 @@ class UserBooking extends React.Component  {
     return (
       <div className="">
         <div className="my-3">
-        
+          
         </div>
       </div>
     )

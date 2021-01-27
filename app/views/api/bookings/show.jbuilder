@@ -1,5 +1,5 @@
-booking = Booking.last
-booking.is_paid? # returns true or false
+#booking = Booking.last
+#booking.is_paid? # returns true or false
 
 json.booking do
   json.id @booking.id
