@@ -2,6 +2,9 @@ import React from 'react'
 import './user.scss'
 import { handleErrors } from '@utils/fetchHelper'
 
+// NOTE TO ME will need to heck the booking endpoint
+// to see if is paid working 
+
 class UserBooking extends React.Component  {
   constructor(props) {
     super(props)
