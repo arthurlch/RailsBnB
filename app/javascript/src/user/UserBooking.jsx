@@ -11,7 +11,6 @@ class UserBooking extends React.Component  {
     this.state = {
       user: {},
       booking: {},
-      loading: true,
       show: false
     }
     this.getUser = this.getUser.bind(this)
@@ -54,15 +53,11 @@ class UserBooking extends React.Component  {
   }
 
   render() {
-    const { booking, user, loading } = this.state;
-    if (loading) {
-      return <p>loading...</p>;
-    }; 
-
+  
     return (
       <div className="">
         <div className="my-3">
-          
+
         </div>
       </div>
     )

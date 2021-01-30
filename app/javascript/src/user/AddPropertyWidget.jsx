@@ -63,7 +63,6 @@ export default class UserPropertyForm extends React.Component {
   
  render () {
    return(
-    
     <div className="py-4 my-4 row">
       <form onSubmit={this.handleSubmit} id="userPropertyForm">
   
