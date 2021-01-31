@@ -10,9 +10,10 @@ class UserBooking extends React.Component  {
     super(props)
     this.state = {
       user: {},
-      booking: {},
+      bookings: [],
       show: false
     }
+    
     this.getUser = this.getUser.bind(this)
     this.getBooking = this.getBooking.bind(this)
   }
@@ -39,7 +40,7 @@ class UserBooking extends React.Component  {
       .then(data => {
         console.log(data)
         this.setState({
-          booking: data.booking,
+          bookings: data.bookings,
           loading: false,
         })
       }) 
@@ -54,10 +55,20 @@ class UserBooking extends React.Component  {
 
   render() {
   
+    const { show, bookings, user } = this.state;
+
+
     return (
       <div className="">
         <div className="my-3">
-
+          <h3>My Bookings:</h3>
+          {bookings.map(booking => 
+          <ul className="my-4 py-3" key={booking.id}> 
+            <li>Booking ID {booking.id}</li>
+            <li>Check-in {booking.start_date}</li>
+            <li>Check-out {booking.end_date}</li>
+          </ul>)
+          }
         </div>
       </div>
     )
