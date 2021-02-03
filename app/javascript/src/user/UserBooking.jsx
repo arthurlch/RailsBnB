@@ -56,8 +56,6 @@ class UserBooking extends React.Component  {
   render() {
   
     const { show, bookings, user } = this.state;
-
-
     return (
       <div className="">
         <div className="my-3">
