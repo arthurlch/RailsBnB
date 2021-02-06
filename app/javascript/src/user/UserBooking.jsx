@@ -39,7 +39,7 @@ class UserBooking extends React.Component  {
   }
 
   getBooking() {
-    fetch('/api/bookings')
+    fetch(`/api/bookings/${this.props.user_id}`)
       .then(handleErrors)
       .then(data => {
         console.log(data)

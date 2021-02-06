@@ -77,5 +77,11 @@ module Api
 
       return head :bad_request
     end
+
+    def show 
+      @charge = Charge.find_by(id: params[:id])
+      return render json: { error: 'not_found' }, status: :not_found if !@charge
+      render 'api/charges/show', status: :ok
+    end
   end
 end
