@@ -1,6 +1,7 @@
 // layout.js
 import React from 'react';
 import './layout.scss';
+// import {BrowserRouter as Router, Switch, Route } from 'react'
 // react router, routing set up in layout.js
 const Layout = (props) => {
   return (
@@ -11,10 +12,10 @@ const Layout = (props) => {
         <div className="d-none d-xl-flex flex-grow-1" id="xlNavbar">
           <a className="navbar-brand py-0 pr-0 pl-2 text-dark" href="#">Airbnb</a>
           <div className="navbar-nav ml-auto">
-          <a className="nav-item nav-link py-0 px-2" href="#"><div className="px-2">Home</div></a>
-            <a className="nav-item nav-link py-0 px-2" href="#"><div className="px-2">Become a host</div></a>
-            <a className="nav-item nav-link py-0 px-2" href="#"><div className="px-2">Sign up</div></a>
-            <a className="nav-item nav-link py-0 px-2" href="#"><div className="px-2">Log in</div></a>
+          <a className="nav-item nav-link py-0 px-2" href="/"><div className="px-2">Home</div></a>
+            <a className="nav-item nav-link py-0 px-2" href="/user/1"><div className="px-2">Become a host</div></a>
+            <a className="nav-item nav-link py-0 px-2" href="/signup"><div className="px-2">Sign up</div></a>
+            <a className="nav-item nav-link py-0 px-2" href="/login"><div className="px-2">Log in</div></a>
           </div>
         </div>
 

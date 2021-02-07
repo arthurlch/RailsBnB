@@ -25,7 +25,6 @@ class BookingWidget extends React.Component {
           authenticated: data.authenticated,
         })
       })
-
     this.getPropertyBookings();
   }
 
@@ -99,7 +98,8 @@ class BookingWidget extends React.Component {
     if (!authenticated) {
       return (
         <div className="border p-4 mb-4">
-          Please <a href={`/login?redirect_url=${window.location.pathname}`}>log in</a> to make a booking.
+          Please <a href={`/login?redirect_url=${window.location.pathname}`}>
+            log in</a> to make a booking.
         </div>
       );
     };

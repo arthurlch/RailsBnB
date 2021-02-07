@@ -2,13 +2,6 @@ import React from 'react'
 import './user.scss'
 import { handleErrors } from '@utils/fetchHelper'
 
-// NOTE TO ME will need to heck the booking endpoint
-// to see if is paid working 
-/* 
-memo fix to do, the stripe webhooks doesnt work. needs to be fixed
-doc/ https://dashboard.stripe.com/test/apikeys
-*/
-
 class UserBooking extends React.Component  {
   constructor(props) {
     super(props)

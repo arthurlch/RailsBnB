@@ -47,6 +47,7 @@ class UserProperty extends React.Component  {
       bookings
     } = user  
 
+    const propertyLink = `prop`
     return (
       <div className="">
         <div className="my-3">
@@ -65,7 +66,7 @@ class UserProperty extends React.Component  {
             <li>Baths: {property.baths}</li>
             <div>
               <button className="btn btn-sm btn-info mx-3" onClick={this._showForm.bind(null, true)}>
-                Edit Property
+                <a href={`/property/${property.id}`}>Edit Property</a>
               </button>
             </div>
           </ul>)} 

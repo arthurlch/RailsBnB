@@ -23,6 +23,7 @@ json.user do
     json.array! @user.bookings do |booking|
     json.start_date booking.start_date
     json.end_date booking.end_date
+    json.is_paid booking.is_paid?
     end
   end
 
