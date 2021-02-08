@@ -28,6 +28,9 @@ class BookingWidget extends React.Component {
     this.getPropertyBookings();
   }
 
+  submitBooking(e) {
+    if (e) { e.preventDefault() }
+  }
   getPropertyBookings = () => {
     fetch(`/api/properties/${this.props.property_id}/bookings`)
       .then(handleErrors)
@@ -43,7 +46,7 @@ class BookingWidget extends React.Component {
     if (e) { e.preventDefault(); }
     const { startDate, endDate } = this.state;
     console.log(startDate.format('MMM DD YYYY'), endDate.format('MMM DD YYYY'));
-
+    
     fetch(`/api/bookings`, safeCredentials({
       method: 'POST',
         body: JSON.stringify({

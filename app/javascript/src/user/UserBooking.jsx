@@ -1,6 +1,7 @@
 import React from 'react'
 import './user.scss'
 import { handleErrors } from '@utils/fetchHelper'
+import UserCheckoutWidget from './UserCheckoutWidget'
 
 class UserBooking extends React.Component  {
   constructor(props) {
@@ -62,7 +63,9 @@ class UserBooking extends React.Component  {
             <li>Booking ID {booking.id}</li>
             <li>Check-in {booking.start_date}</li>
             <li>Check-out {booking.end_date}</li>
-            <li>Your booking is {booking.is_paid ? "Paid" : "Unpaid"}</li>
+            <li>Your booking is {booking.is_paid ? 
+            "Paid" : <UserCheckoutWidget/>}
+            </li>
           </ul>)}
         </div>
       </div>

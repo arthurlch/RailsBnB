@@ -55,9 +55,20 @@ export default class UserCheckoutWidget extends React.Component {
       })
   }
 
+  submitBooking(e) {
+    if (e) { e.preventDefault() }
+      this.initiateStripeCheckout(response.booking.id)
+  }
+
   render() {
+
+    const { authenticated, existingBookings, focusedInput, error } = this.state
+    
     return(
-      <div></div>
-    )
+    <div className="UserCheckoutWidget">
+      <form onSubmit={this.submitBooking}>
+          <button type="submit" className="btn btn-small btn-danger">Unpaid</button>
+        </form>
+    </div>)
   }
 }
