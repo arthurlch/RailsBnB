@@ -25,12 +25,10 @@ class BookingWidget extends React.Component {
           authenticated: data.authenticated,
         })
       })
+
     this.getPropertyBookings();
   }
 
-  submitBooking(e) {
-    if (e) { e.preventDefault() }
-  }
   getPropertyBookings = () => {
     fetch(`/api/properties/${this.props.property_id}/bookings`)
       .then(handleErrors)
@@ -45,8 +43,7 @@ class BookingWidget extends React.Component {
   submitBooking = (e) => {
     if (e) { e.preventDefault(); }
     const { startDate, endDate } = this.state;
-    console.log(startDate.format('MMM DD YYYY'), endDate.format('MMM DD YYYY'));
-    
+
     fetch(`/api/bookings`, safeCredentials({
       method: 'POST',
         body: JSON.stringify({
@@ -101,8 +98,7 @@ class BookingWidget extends React.Component {
     if (!authenticated) {
       return (
         <div className="border p-4 mb-4">
-          Please <a href={`/login?redirect_url=${window.location.pathname}`}>
-            log in</a> to make a booking.
+          Please <a href={`/login?redirect_url=${window.location.pathname}`}>log in</a> to make a booking.
         </div>
       );
     };
