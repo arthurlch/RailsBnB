@@ -1,6 +1,6 @@
 import React from 'react'
 import { safeCredentials, handleErrors } from '@utils/fetchHelper'
-
+// def stripe api 
 export default class UserCheckoutWidget extends React.Component {
   state = {
     authenticated: false,
