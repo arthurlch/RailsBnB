@@ -64,7 +64,7 @@ class UserBooking extends React.Component  {
             <li>Check-in {booking.start_date}</li>
             <li>Check-out {booking.end_date}</li>
             <li>Your booking is {booking.is_paid ? 
-            "Paid" : <UserCheckoutWidget/>}
+            "Paid" : <UserCheckoutWidget booking_id={booking.id}/>}
             </li>
           </ul>)}
         </div>

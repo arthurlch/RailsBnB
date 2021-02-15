@@ -1,39 +1,38 @@
 import React from 'react'
 import { safeCredentials, handleErrors } from '@utils/fetchHelper'
 // def stripe api 
+
 export default class UserCheckoutWidget extends React.Component {
   state = {
     authenticated: false,
-    existingBookings: [],
-    focusedInput: null,
-    error: false,
+    booking: {}
   }
 
   componentDidMount() {
-    fetch('/api/authenticated')
+    fetch('/api/authenticate')
       .then(handleErrors)
       .then(data => {
         this.setState({
           authenticated: data.authenticated,
         })
       })
-    this.getPropertyBookings();
+    this.getBooking();
   }
 
-  getPropertyBookings = () => {
-    fetch(`/api/properties/${this.props.property_id}/bookings`)
+  getBooking = () => {
+    fetch(`/api/bookings/${this.props.booking_id}`)
       .then(handleErrors)
       .then(data => {
         console.log(data);
         this.setState({
-          existingBookings: data.bookings,
+          booking: data.booking,
         })
       })
   }
 
   initiateStripeCheckout = (booking_id) => {
     return fetch(`/api/charges?booking_id=${booking_id}&cancel_url=${window.location.pathname}`, safeCredentials({
-      method: 'POST',
+      method: 'PUT',
     }))
       .then(handleErrors)
       .then(response => {
@@ -62,13 +61,12 @@ export default class UserCheckoutWidget extends React.Component {
 
   render() {
 
-    const { authenticated, existingBookings, focusedInput, error } = this.state
+    const { authenticated,error } = this.state
     
     return(
     <div className="UserCheckoutWidget">
-      <form onSubmit={this.submitBooking}>
-          <button type="submit" className="btn btn-small btn-danger">Unpaid</button>
-        </form>
+      <button onSubmit={this.submitBooking} type="submit" 
+        className="btn btn-small btn-danger">Unpaid</button>
     </div>)
   }
 }
