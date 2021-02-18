@@ -24,8 +24,6 @@ class UserCheckoutWidget extends React.Component {
     this.getBooking()
   }
 
-  
-
   getBooking = () => {
     fetch(`/api/bookings/${this.props.booking_id}`)
     .then(handleErrors)
@@ -40,7 +38,7 @@ class UserCheckoutWidget extends React.Component {
     if (e) { e.preventDefault(); }
     const { start_date, end_date } = this.state.booking;
 
-    fetch(`/api/bookings`, safeCredentials({
+    fetch(`/api/bookings/${this.props.booking_id}`, safeCredentials({
       method: 'POST',
         body: JSON.stringify({
           booking: {
@@ -95,11 +93,11 @@ class UserCheckoutWidget extends React.Component {
     return (
       <div className="p-4 mb-4">
         <form onSubmit={this.submitBooking}>
-          <button type="submit" className="btn btn-small btn-danger">Checkout</button>
+          <button type="submit" className="btn btn-small btn-danger">Unpaid</button>
         </form>
       </div>
     )
   }
 }
 
-export default UserCheckoutWidget;
+export default UserCheckoutWidget
