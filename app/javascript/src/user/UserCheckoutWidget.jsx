@@ -1,7 +1,7 @@
 // bookingWidget.jsx
 import React from 'react';
 import { safeCredentials, handleErrors } from '@utils/fetchHelper';
-
+// no need to use post just use checkout function from stripe
 class UserCheckoutWidget extends React.Component {
   state = {
     authenticated: false,
