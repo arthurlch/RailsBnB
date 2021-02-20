@@ -6,8 +6,6 @@ class UserCheckoutWidget extends React.Component {
   state = {
     authenticated: false,
     booking: {},
-    startDate: "",
-    endDate: "",
     loading: false,
     error: false,
   }
@@ -36,25 +34,7 @@ class UserCheckoutWidget extends React.Component {
 
   submitBooking = (e) => {
     if (e) { e.preventDefault(); }
-    const { start_date, end_date } = this.state.booking;
-
-    fetch(`/api/bookings/${this.props.booking_id}`, safeCredentials({
-      method: 'POST',
-        body: JSON.stringify({
-          booking: {
-            property_id: this.props.property_id,
-            start_date: this.state.booking.start_date,
-            end_date: this.state.booking.end_date,
-          }
-        })
-    }))
-      .then(handleErrors)
-      .then(response => {
-        return this.initiateStripeCheckout(response.booking.id)
-      })
-      .catch(error => {
-        console.log(error);
-      })
+    this.initiateStripeCheckout(booking.id)
   }
 
   initiateStripeCheckout = (booking_id) => {
