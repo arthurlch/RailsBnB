@@ -18,23 +18,11 @@ class UserCheckoutWidget extends React.Component {
           authenticated: data.authenticated,
         })
       })
-    // this.getPropertyBookings()
-    this.getBooking()
-  }
-
-  getBooking = () => {
-    fetch(`/api/bookings/${this.props.booking_id}`)
-    .then(handleErrors)
-    .then(data =>{
-      this.setState({
-        booking: data.booking
-      })
-    })
   }
 
   submitBooking = (e) => {
     if (e) { e.preventDefault(); }
-    this.initiateStripeCheckout(booking.id)
+    this.initiateStripeCheckout(this.props.booking_id)   
   }
 
   initiateStripeCheckout = (booking_id) => {

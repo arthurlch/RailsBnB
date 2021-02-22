@@ -36,7 +36,6 @@ class UserBooking extends React.Component  {
     fetch('/api/bookings')
       .then(handleErrors)
       .then(data => {
-        console.log(data)
         this.setState({
           bookings: data.bookings,
           loading: false,
@@ -44,7 +43,6 @@ class UserBooking extends React.Component  {
       }) 
   }
 
-  
   _showForm = (bool) => {
     this.setState({
       showForm: bool
@@ -60,7 +58,6 @@ class UserBooking extends React.Component  {
           <h3>My Bookings:</h3>
           {bookings.map(booking => 
           <ul className="my-4 py-3" key={booking.id}> 
-            {console.log(booking)}
             <li>Booking ID {booking.id}</li>
             <li>Check-in {booking.start_date}</li>
             <li>Check-out {booking.end_date}</li>
