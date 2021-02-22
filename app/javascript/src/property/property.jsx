@@ -86,7 +86,7 @@ class Property extends React.Component {
               <button className="btn btn-sm" onClick={this._showForm.bind(null, false)}>Hide Form</button>
               { this.state.showForm && (
                 <div className="EditPropertyWidget">
-                  <p className="mt-4">Please fill the whole form before sumbmiting</p>
+                  <p className="mt-4">Please fill the whole form before to submit</p>
                   <EditPropertyWidget property_id={id} />
                 </div>)
                 }

@@ -33,6 +33,8 @@ export default class UserPropertyForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     let formData = new FormData();
+    
+    
     for (let i = 0; i < images.files.length; i++) {
       formData.append('property[images][]', images.files[i]);
     }
@@ -128,7 +130,7 @@ export default class UserPropertyForm extends React.Component {
         </div>
 
         <div className="form-group">
-          <label className="col" htmlFor="images">Images:</label>
+          <label className="col" htmlFor="images">Image:</label>
           <input className="form-control form-control-sm" id="images" type="file"
             rows="1" name="images" value={this.state.images || ''} onChange={this.handleChange}/>
         </div>

@@ -53,6 +53,7 @@ class Home extends React.Component {
           <p className="text-secondary mb-3">Explore some of the best-reviewed stays in the world</p>
           <div className="row">
             {properties.map(property => {
+              {console.log(property.images)}
               return (
                 <div key={property.id} className="col-6 col-lg-4 mb-4 property">
                   <a href={`/property/${property.id}`} className="text-body text-decoration-none">

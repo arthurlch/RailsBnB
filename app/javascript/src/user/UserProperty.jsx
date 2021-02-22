@@ -47,7 +47,6 @@ class UserProperty extends React.Component  {
       bookings
     } = user  
 
-    const propertyLink = `prop`
     return (
       <div className="">
         <div className="my-3">

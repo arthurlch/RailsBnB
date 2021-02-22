@@ -35,8 +35,7 @@ module Api
     def show
       @property = Property.find_by(id: params[:id])
       return render json: { error: 'not_found' }, status: :not_found if !@property
-      render 'api/properties/show', status: :ok
-      
+      render 'api/properties/show', status: :ok  
     end
 
     private
@@ -47,7 +46,7 @@ module Api
 
     def property_params 
       params.require(:property).permit(:id, :title, :description,
-      :property_type, :price_per_night, :max_guests, :bedrooms, :city, :country, :beds, :baths, :user, images: [])
+      :property_type, :price_per_night, :max_guests, :bedrooms, :city, :country, :beds, :baths, :user, :images[])
     end
   end
 end
