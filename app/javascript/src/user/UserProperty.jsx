@@ -47,6 +47,10 @@ class UserProperty extends React.Component  {
       bookings
     } = user  
 
+    const {
+      user
+    } = property
+
     return (
       <div className="">
         <div className="my-3">
@@ -63,6 +67,7 @@ class UserProperty extends React.Component  {
             <li>Bedrooms: {property.bedrooms}</li>
             <li>Beds: {property.beds}</li>
             <li>Baths: {property.baths}</li>
+            <li>Guests: {user.username}</li>
             <div>
               <button className="btn btn-sm btn-info mx-3" onClick={this._showForm.bind(null, true)}>
                 <a href={`/property/${property.id}`}>Edit Property</a>
@@ -70,6 +75,8 @@ class UserProperty extends React.Component  {
             </div>
           </ul>)} 
         </div>
+
+        
          
         <div>
           <h4 className="py-4 my-4">Become a host today and add a property to your account!</h4>
