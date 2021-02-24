@@ -14,7 +14,7 @@ json.properties do
     json.bookings do
       json.array! property.bookings do |booking|
         json.id booking.id
-        json.username booking.user.username
+        json.user booking.user.username
         end
     end
   end

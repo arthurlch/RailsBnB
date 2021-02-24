@@ -22,6 +22,7 @@ class UserProperty extends React.Component  {
     fetch(`/api/users/${this.props.user_id}`)
       .then(handleErrors)
       .then(data => {
+        console.log(data)
         this.setState({
           user: data.user,
           loading: false,
@@ -44,7 +45,7 @@ class UserProperty extends React.Component  {
     const {
       id,
       properties,
-      bookings
+      bookings,
     } = user  
 
     return (
@@ -63,7 +64,6 @@ class UserProperty extends React.Component  {
             <li>Bedrooms: {property.bedrooms}</li>
             <li>Beds: {property.beds}</li>
             <li>Baths: {property.baths}</li>
-            <li>Bookings: </li>
             <div>
               <button className="btn btn-sm btn-info mx-3" onClick={this._showForm.bind(null, true)}>
                 <a href={`/property/${property.id}`}>Edit Property</a>
@@ -72,8 +72,6 @@ class UserProperty extends React.Component  {
           </ul>)} 
         </div>
 
-        
-         
         <div>
           <h4 className="py-4 my-4">Become a host today and add a property to your account!</h4>
           <button className="btn btn-sm btn-info mx-3" onClick={this._showForm.bind(null, true)}>Add Property</button>
