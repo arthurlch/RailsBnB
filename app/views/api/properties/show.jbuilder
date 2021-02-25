@@ -21,4 +21,12 @@ json.property do
     json.id @property.user.id
     json.username @property.user.username
   end
+
+  json.bookings do
+    json.array! property.bookings do |booking|
+      json.id booking.id
+      json.booking.user booking.user.username
+    end
+  end
+  
 end

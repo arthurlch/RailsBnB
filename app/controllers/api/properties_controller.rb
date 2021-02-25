@@ -10,10 +10,7 @@ module Api
 
       # when indexing properties it should be possible to get the booking of the properties
       # by guest we intend to say a User. User Object
-      user = User.find_by(id: params[:user][:user_id])
-      return render json: { error: 'cannot find user' }, status: :not_found if !user
       
-      # property_guest = properties.user.find_by(:id)
     end
 
     def create 

@@ -49,7 +49,7 @@ class Property extends React.Component {
       baths,
       images,
       user,
-      image_url
+      image_url,
     } = property
 
     return (
