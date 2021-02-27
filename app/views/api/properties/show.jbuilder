@@ -11,6 +11,15 @@ json.property do
   json.beds @property.beds
   json.baths @property.baths
   json.image_url @property.image_url
+  
+  json.bookings do
+    json.array! @property.bookings do |booking|
+      json.id booking.id
+      json.is_paid booking.is_paid?
+      json.user booking.user
+    end
+  end
+
   json.images do
     json.array! @property.images do |image|
       json.image_url url_for(image)
@@ -20,13 +29,5 @@ json.property do
   json.user do
     json.id @property.user.id
     json.username @property.user.username
-  end
-
-  json.bookings do
-    json.array! property.bookings do |booking|
-      json.id booking.id
-      json.booking.user booking.user.username
-    end
-  end
-  
+  end  
 end

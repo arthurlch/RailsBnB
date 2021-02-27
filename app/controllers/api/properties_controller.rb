@@ -39,7 +39,7 @@ module Api
     def show
       @property = Property.find_by(id: params[:id])
       return render json: { error: 'not_found' }, status: :not_found if !@property
-      render 'api/properties/show', status: :ok  
+      render 'api/properties/show', status: :ok   
     end
 
     private

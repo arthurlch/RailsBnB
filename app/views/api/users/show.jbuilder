@@ -16,6 +16,7 @@ json.user do
       json.bedrooms property.bedrooms
       json.beds property.beds
       json.baths property.baths
+      json.bookings property.bookings
     end
   end
 
