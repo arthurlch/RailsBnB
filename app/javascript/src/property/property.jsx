@@ -1,12 +1,13 @@
 // property.jsx
-import React from 'react';
-import Layout from '@src/layout';
-import BookingWidget from './bookingWidget';
+import React from 'react'
+import Layout from '@src/layout'
+import BookingWidget from './bookingWidget'
 import EditPropertyWidget from './EditPropertyWidget'
-import { handleErrors } from '@utils/fetchHelper';
-import './property.scss';
+import PropertyBooking from './PropertyBooking'
+import { handleErrors } from '@utils/fetchHelper'
+import './property.scss'
 
-class Property extends React.Component {
+export default class Property extends React.Component {
   state = {
   property: {},
   loading: true,
@@ -26,14 +27,14 @@ class Property extends React.Component {
   _showForm = (bool) => {
     this.setState({
       showForm: bool
-    });
+    })
   }
 
   render () {
     const { property, loading } = this.state;
     if (loading) {
       return <p>loading...</p>;
-    };
+    }
 
     const {
       id,
@@ -91,14 +92,18 @@ class Property extends React.Component {
                 </div>)
                 }
             </div>
+
             <div className="col-12 col-lg-5">
               <BookingWidget property_id={id} price_per_night={price_per_night} />
             </div>
+
+            <div className="propertyBooking col-12 col-lg-5 py-4 mt-4">
+              <PropertyBooking property_id={id} />
+            </div>
+
           </div>
         </div>
       </Layout>
     )
   }
 }
-
-export default Property;

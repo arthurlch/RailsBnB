@@ -3,7 +3,7 @@ import './user.scss'
 import AddPropertyWidget from './AddPropertyWidget'
 import { handleErrors } from '@utils/fetchHelper'
 
-class UserProperty extends React.Component  {
+export default class UserProperty extends React.Component  {
   constructor(props) {
     super(props)
     this.state = {
@@ -39,7 +39,7 @@ class UserProperty extends React.Component  {
   render() {
     const { user, loading } = this.state;
     if (loading) {
-      return <p>loading...</p>;
+      return <p>loading...</p>
     };
 
     const {
@@ -87,7 +87,6 @@ class UserProperty extends React.Component  {
   }
 }
 
-export default UserProperty
 
 
 

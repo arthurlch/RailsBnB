@@ -2,7 +2,7 @@
 import React from 'react';
 import { safeCredentials, handleErrors } from '@utils/fetchHelper';
 
-class UserCheckoutWidget extends React.Component {
+export default class UserCheckoutWidget extends React.Component {
   state = {
     authenticated: false,
     booking: {},
@@ -21,7 +21,7 @@ class UserCheckoutWidget extends React.Component {
   }
 
   submitBooking = (e) => {
-    if (e) { e.preventDefault(); }
+    if (e) { e.preventDefault() }
     this.initiateStripeCheckout(this.props.booking_id)   
   }
 
@@ -45,18 +45,18 @@ class UserCheckoutWidget extends React.Component {
         });
       })
       .catch(error => {
-        console.log(error);
+        console.log(error)
       })
   }
   render () {
-    const { authenticated } = this.state;
+    const { authenticated } = this.state
     if (!authenticated) {
       return (
         <div className="border p-4 mb-4">
           Please <a href={`/login?redirect_url=${window.location.pathname}`}>log in</a> to go checkout.
         </div>
-      );
-    };
+      )
+    }
 
     return (
       <div className="p-4 mb-4">
@@ -67,5 +67,3 @@ class UserCheckoutWidget extends React.Component {
     )
   }
 }
-
-export default UserCheckoutWidget
