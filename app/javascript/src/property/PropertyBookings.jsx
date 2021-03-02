@@ -1,14 +1,43 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 import { handleErrors } from '@utils/fetchHelper'
 
 export default class PropertyBookings extends React.Component {
   // due to memory leak bug React use of _isMounted is needed doc link below
   // https://stackoverflow.com/questions/53949393/cant-perform-a-react-state-update-on-an-unmounted-component 
+  // after futher tests it seems that calling the /authenticated endpoint
+  // will trigger this memory leak from the dom
   _isMounted = false
+  constructor(props) {
+    super(props)
+    this.state = {
+      property: {},
+      authenticated: false,
+    }
+  }
   
-  state = {
-    property: {},
-    authenticated: false,
+  propertyData = () => {
+    fetch(`/api/properties/${this.props.property_id}`)  
+    .then(handleErrors)
+      .then(data => {
+        if (this._isMounted) {
+          this.setState({
+            property: data.property,
+          })
+        }
+    }) 
+  }
+
+  isAuthenticated = () => {
+    fetch('/api/authenticated')
+      .then(handleErrors)
+      .then(data => {
+        if (this._isMounted) {
+            this.setState({
+            authenticated: data.authenticated,
+          })
+        }
+      })
   }
   
   componentDidMount() {
@@ -19,27 +48,6 @@ export default class PropertyBookings extends React.Component {
 
   componentWillUnmount() {
     this._isMounted = false
-  }
-
-  propertyData = () => {
-    fetch(`/api/properties/${this.props.property_id}`)  
-    .then(handleErrors)
-      .then(data => {
-        this.setState({
-          property: data.property,
-          loading: false,
-        })
-    }) 
-  }
-
-  isAuthenticated = () => {
-    fetch('/api/authenticated')
-    .then(handleErrors)
-      .then(data => {
-        this.setState({
-          authenticated: data.authenticated,
-        })
-    })
   }
 
   render() {
