@@ -17,6 +17,8 @@ json.property do
       json.id booking.id
       json.is_paid booking.is_paid?
       json.user booking.user
+      json.start_date @booking.start_date
+      json.end_date @booking.end_date
     end
   end
 

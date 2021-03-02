@@ -48,6 +48,7 @@ export default class UserCheckoutWidget extends React.Component {
         console.log(error)
       })
   }
+
   render () {
     const { authenticated } = this.state
     if (!authenticated) {
@@ -57,7 +58,7 @@ export default class UserCheckoutWidget extends React.Component {
         </div>
       )
     }
-
+    
     return (
       <div className="p-4 mb-4">
         <form onSubmit={this.submitBooking}>

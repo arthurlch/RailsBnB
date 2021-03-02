@@ -2,8 +2,8 @@
 import React from 'react'
 import Layout from '@src/layout'
 import BookingWidget from './bookingWidget'
+import PropertyBookings from './PropertyBookings'
 import EditPropertyWidget from './EditPropertyWidget'
-import PropertyBooking from './PropertyBooking'
 import { handleErrors } from '@utils/fetchHelper'
 import './property.scss'
 
@@ -58,10 +58,9 @@ export default class Property extends React.Component {
         <div className="property-image-url" style={{ backgroundImage: `url(${image_url})` }} />
         <div className="property-image">
         {images.map(image => {
-          return(<img className="property-image" src={image.image_url}/>)
+          return (<img className="property-image" src={image.image_url}/>)
         })}
         </div>
-        <div></div>
         <div className="container">
           <div className="row">
             <div className="info col-12 col-lg-7">
@@ -86,6 +85,7 @@ export default class Property extends React.Component {
               <button className="btn btn-sm btn-info mx-3" onClick={this._showForm.bind(null, true)}>Edit Property</button>
               <button className="btn btn-sm" onClick={this._showForm.bind(null, false)}>Hide Form</button>
               { this.state.showForm && (
+                
                 <div className="EditPropertyWidget">
                   <p className="mt-4">Please fill the whole form before to submit</p>
                   <EditPropertyWidget property_id={id} />
@@ -97,9 +97,9 @@ export default class Property extends React.Component {
               <BookingWidget property_id={id} price_per_night={price_per_night} />
             </div>
 
-            <div className="propertyBooking col-12 col-lg-5 py-4 mt-4">
-              <PropertyBooking property_id={id} />
-            </div>
+            <div className="col-12 col-lg-5">
+              <PropertyBookings property_id={id} />
+            </div>     
 
           </div>
         </div>
