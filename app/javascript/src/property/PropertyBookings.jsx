@@ -54,7 +54,6 @@ export default class PropertyBookings extends React.Component {
 
     return (
       <div className="propertyBooking">
-        {(console.log(bookings))}
       </div>
     )
   }
