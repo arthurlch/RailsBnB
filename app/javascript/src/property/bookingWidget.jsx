@@ -89,7 +89,11 @@ class BookingWidget extends React.Component {
   onDatesChange = ({ startDate, endDate }) => this.setState({ startDate, endDate })
   onFocusChange = (focusedInput) => this.setState({ focusedInput })
 
-  isDayBlocked = day => this.state.existingBookings.filter(b => day.isBetween(b.start_date, b.end_date, null, '[)')).length > 0
+  isDayBlocked = day => this.state.existingBookings.filter(b => 
+      day.isBetween(b.start_date, b.end_date, null, '[)')).length > 0
+
+  isInvalidDate = day => this.state.existingBookings.filter(b =>
+    day.isSame(b.end_date, null, '(]')).length > 0
 
   render () {
     const { authenticated, startDate, endDate, focusedInput } = this.state;
@@ -124,6 +128,7 @@ class BookingWidget extends React.Component {
               onFocusChange={this.onFocusChange} // PropTypes.func.isRequired,
               isDayBlocked={this.isDayBlocked} // block already booked dates
               numberOfMonths={1}
+              isInvalidDate={this.isInvalidDate}
             />
           </div>
           {days && (
