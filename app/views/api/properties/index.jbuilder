@@ -1,5 +1,5 @@
-#json.total_pages @properties.total_pages
-#json.next_page @properties.next_page
+json.total_pages @properties.total_pages
+json.next_page @properties.next_page
 
 json.properties do
   json.array! @properties do |property|
