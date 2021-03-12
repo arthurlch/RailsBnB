@@ -1,10 +1,25 @@
 // bookingWidget.jsx
-import React from 'react';
-import 'react-dates/initialize';
-import { DateRangePicker } from 'react-dates';
-import { safeCredentials, handleErrors } from '@utils/fetchHelper';
+import React from 'react'
+import 'react-dates/initialize'
+import { DateRangePicker } from 'react-dates'
+import { safeCredentials, handleErrors } from '@utils/fetchHelper'
+import 'react-dates/lib/css/_datepicker.css'
 
-import 'react-dates/lib/css/_datepicker.css';
+// External librairies 
+// react-dates documentation https://github.com/airbnb/react-dates 
+// The dateRangerPicker use moment js https://momentjs.com/ for moments option
+// stripe checkout https://stripe.com/docs/payments/checkout  
+
+/* BookingWidget is a widget used to perform booking on the page of a porerty
+it use react-dates and moment.js as libraires. 
+
+  Get property data api/properties/${this.props.property_id}/bookings
+  Authenticated user throught api/authenticated
+  Retrieve existing bookings from api/properties start_date & end_date of bookings
+  Display DateRangePicker and setup props and available date for bookings via momentjs 
+  Submit booking with POST request when user picked a startDate and endDate 
+  POST request initialize StripeCheckout
+*/
 
 class BookingWidget extends React.Component {
   state = {
@@ -90,10 +105,10 @@ class BookingWidget extends React.Component {
   onFocusChange = (focusedInput) => this.setState({ focusedInput })
 
   isDayBlocked = day => this.state.existingBookings.filter(b => 
-      day.isBetween(b.start_date, b.end_date, null, '[)')).length > 0
+      day.isBetween(b.start_date, b.end_date, null, '[)')).length > 0 
 
-  isInvalidDate = day => this.state.existingBookings.filter(b =>
-    day.isSame(b.end_date, null, '(]')).length > 0
+  isDayBlockedInclusive = day => this.state.existingBookings.filter(b =>
+    day.isBetween(b.start_date, b.end_date, null, '(]')).length > 0
 
   render () {
     const { authenticated, startDate, endDate, focusedInput } = this.state;
@@ -127,8 +142,9 @@ class BookingWidget extends React.Component {
               focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
               onFocusChange={this.onFocusChange} // PropTypes.func.isRequired,
               isDayBlocked={this.isDayBlocked} // block already booked dates
+              isDayBlocked={this.isDayBlockedInclusive} // include Checkin in blocked days
+              minimumNights={1}
               numberOfMonths={1}
-              isInvalidDate={this.isInvalidDate}
             />
           </div>
           {days && (
