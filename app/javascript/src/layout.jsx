@@ -10,11 +10,10 @@ const Layout = (props) => {
       <nav className="navbar navbar-expand-xl py-0 my-0 position-absolute w-100" id="navbar">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossOrigin="anonymous"></link>
         <div className="d-none d-xl-flex flex-grow-1" id="xlNavbar">
-          <a className="navbar-brand py-0 pr-0 pl-2 text-dark" href="#">Airbnb</a>
+          <a className="navbar-brand py-0 pr-0 pl-2 text-dark" href="/">Airbnb</a>
           <div className="navbar-nav ml-auto">
           <a className="nav-item nav-link py-0 px-2" href="/"><div className="px-2">Home</div></a>
-            <a className="nav-item nav-link py-0 px-2" href="/user/1"><div className="px-2">Become a host</div></a>
-            <a className="nav-item nav-link py-0 px-2" href="/signup"><div className="px-2">Sign up</div></a>
+            <a className="nav-item nav-link py-0 px-2" href="/login"><div className="px-2">Sign up</div></a>
             <a className="nav-item nav-link py-0 px-2" href="/login"><div className="px-2">Log in</div></a>
           </div>
         </div>

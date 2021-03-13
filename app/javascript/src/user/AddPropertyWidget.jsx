@@ -6,7 +6,6 @@ export default class UserPropertyForm extends React.Component {
     super(props)
     this.state = { 
       id: "",
-      images: [],
       title: "",
       description: "",
       city: "",
@@ -17,7 +16,7 @@ export default class UserPropertyForm extends React.Component {
       bedrooms: "",
       beds: "",
       baths: "",
-      image_url: ""
+      avatar: ""
     }
     
     this.handleChange = this.handleChange.bind(this)
@@ -35,10 +34,8 @@ export default class UserPropertyForm extends React.Component {
     let formData = new FormData();
     
     
-    for (let i = 0; i < images.files.length; i++) {
-      formData.append('property[images][]', images.files[i]);
-    }
-
+    // formData append image
+    formData.append('property[avatar]', this.state.avatar)
     // Set other params in the formData
     formData.set('property[id]', this.state.id);
     formData.set('property[title]', this.state.title);

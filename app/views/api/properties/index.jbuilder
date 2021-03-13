@@ -9,7 +9,7 @@ json.properties do
     json.country property.country
     json.property_type property.property_type
     json.price_per_night property.price_per_night
-    json.images property.image_url
+    json.avatar property.image_url
     json.bookings do
       json.array! property.bookings do |booking|
         json.id booking.id

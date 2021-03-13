@@ -5,13 +5,14 @@ import { DateRangePicker } from 'react-dates'
 import { safeCredentials, handleErrors } from '@utils/fetchHelper'
 import 'react-dates/lib/css/_datepicker.css'
 
-// External librairies 
-// react-dates documentation https://github.com/airbnb/react-dates 
-// The dateRangerPicker use moment js https://momentjs.com/ for moments option
-// stripe checkout https://stripe.com/docs/payments/checkout  
+/* 
+  BookingWidget is a widget used to pick dates and perform booking on the page of a porperty
+  it use react-dates and moment.js, Stripe Checkout external libraires. 
 
-/* BookingWidget is a widget used to perform booking on the page of a porerty
-it use react-dates and moment.js as libraires. 
+  External librairies 
+  react-dates documentation https://github.com/airbnb/react-dates 
+  The dateRangerPicker use moment js https://momentjs.com/ for moments option
+  stripe checkout https://stripe.com/docs/payments/checkout  
 
   Get property data api/properties/${this.props.property_id}/bookings
   Authenticated user throught api/authenticated

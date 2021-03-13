@@ -48,19 +48,13 @@ export default class Property extends React.Component {
       bedrooms,
       beds,
       baths,
-      images,
       user,
-      image_url,
+      avatar,
     } = property
 
     return (
       <Layout>
-        <div className="property-image-url" style={{ backgroundImage: `url(${image_url})` }} />
-        <div className="property-image">
-        {images.map(image => {
-          return (<img className="property-image" src={image.image_url}/>)
-        })}
-        </div>
+        <div className="property-image-url" style={{ backgroundImage: `url(${avatar})` }} />
         <div className="container">
           <div className="row">
             <div className="info col-12 col-lg-7">
