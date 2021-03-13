@@ -22,7 +22,6 @@ export default class UserProperty extends React.Component  {
     fetch(`/api/users/${this.props.user_id}`)
       .then(handleErrors)
       .then(data => {
-        console.log(data)
         this.setState({
           user: data.user,
           loading: false,

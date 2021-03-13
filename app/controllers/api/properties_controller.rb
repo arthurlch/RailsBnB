@@ -10,7 +10,6 @@ module Api
 
       # when indexing properties it should be possible to get the booking of the properties
       # by guest we intend to say a User. User Object
-      
     end
 
     def create 

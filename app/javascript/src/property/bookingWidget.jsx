@@ -22,7 +22,8 @@ import 'react-dates/lib/css/_datepicker.css'
   POST request initialize StripeCheckout
 */
 
-class BookingWidget extends React.Component {
+export default class BookingWidget extends React.Component {
+
   state = {
     authenticated: false,
     existingBookings: [],
@@ -33,6 +34,7 @@ class BookingWidget extends React.Component {
     error: false,
   }
 
+  // user need to be authenticated to see the booking widget
   componentDidMount() {
     fetch('/api/authenticated')
       .then(handleErrors)
@@ -41,10 +43,10 @@ class BookingWidget extends React.Component {
           authenticated: data.authenticated,
         })
       })
-
     this.getPropertyBookings();
   }
 
+  // get property bookings and set actual bookings to existing bookings inside state
   getPropertyBookings = () => {
     fetch(`/api/properties/${this.props.property_id}/bookings`)
       .then(handleErrors)
@@ -57,7 +59,7 @@ class BookingWidget extends React.Component {
 
   submitBooking = (e) => {
     if (e) { e.preventDefault(); }
-    const { startDate, endDate } = this.state;
+    const { startDate, endDate } = this.state
 
     fetch(`/api/bookings`, safeCredentials({
       method: 'POST',
@@ -78,6 +80,8 @@ class BookingWidget extends React.Component {
       })
   }
 
+  // the code from initiateStripeCheckout can be found inside the checkout stripe doc 
+  // https://stripe.com/docs/checkout/integration-builder
   initiateStripeCheckout = (booking_id) => {
     return fetch(`/api/charges?booking_id=${booking_id}&cancel_url=${window.location.pathname}`, safeCredentials({
       method: 'POST',
@@ -105,9 +109,13 @@ class BookingWidget extends React.Component {
   onDatesChange = ({ startDate, endDate }) => this.setState({ startDate, endDate })
   onFocusChange = (focusedInput) => this.setState({ focusedInput })
 
+  // We need to filter our existing bookings to know at what time/date user can make bookings
+  // For that we use momentjs https://momentjs.com/docs/#/query/
+  // exclude booked days between start_date and end_dateblocked days 
   isDayBlocked = day => this.state.existingBookings.filter(b => 
       day.isBetween(b.start_date, b.end_date, null, '[)')).length > 0 
 
+  // exclude start_date from available date
   isDayBlockedInclusive = day => this.state.existingBookings.filter(b =>
     day.isBetween(b.start_date, b.end_date, null, '(]')).length > 0
 
@@ -118,14 +126,14 @@ class BookingWidget extends React.Component {
         <div className="border p-4 mb-4">
           Please <a href={`/login?redirect_url=${window.location.pathname}`}>log in</a> to make a booking.
         </div>
-      );
-    };
+      )
+    }
 
-    const { price_per_night } = this.props;
+    const { price_per_night } = this.props
 
     let days;
     if (startDate && endDate) {
-      days = endDate.diff(startDate, 'days');
+      days = endDate.diff(startDate, 'days')
     }
 
     return (
@@ -144,7 +152,7 @@ class BookingWidget extends React.Component {
               onFocusChange={this.onFocusChange} // PropTypes.func.isRequired,
               isDayBlocked={this.isDayBlocked} // block already booked dates
               isDayBlocked={this.isDayBlockedInclusive} // include Checkin in blocked days
-              minimumNights={1}
+              minimumNights={1} // Safety measure
               numberOfMonths={1}
             />
           </div>
@@ -161,4 +169,3 @@ class BookingWidget extends React.Component {
   }
 }
 
-export default BookingWidget

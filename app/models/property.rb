@@ -5,7 +5,7 @@ class Property < ApplicationRecord
 
   belongs_to :user
   has_many :bookings, dependent: :destroy
-  has_one :avatar, dependent: :destroy
+  has_one_attached :avatar, dependent: :destroy
   has_many :images, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 70 }

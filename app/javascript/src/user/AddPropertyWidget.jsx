@@ -127,9 +127,9 @@ export default class UserPropertyForm extends React.Component {
         </div>
 
         <div className="form-group">
-          <label className="col" htmlFor="images">Image:</label>
-          <input className="form-control form-control-sm" id="images" type="file"
-            rows="1" name="images" value={this.state.images || ''} onChange={this.handleChange}/>
+          <label className="col" htmlFor="avatar">Image:</label>
+          <input className="form-control form-control-sm" id="avatar" type="file"
+            rows="1" name="avatar" value={this.state.avatar || ''} onChange={this.handleChange}/>
         </div>
 
         <button className="btn btn-sm btn-danger" type="submit">Submit</button>

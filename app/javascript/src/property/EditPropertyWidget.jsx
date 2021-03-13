@@ -1,7 +1,10 @@
+// EditPropertyWidget.jsx
 import React from 'react' 
-import { handleErrors, safeCredentialsForm } from '@utils/fetchHelper';
+import { handleErrors, safeCredentialsForm } from '@utils/fetchHelper'
 // fetch from property api and post to property api instead of user.properties 
 export default class EditPropertyWidget extends React.Component {
+  
+  /* Component to edit property from the property page */
   constructor(props) {
     super(props)
     this.state = { 
@@ -51,13 +54,11 @@ export default class EditPropertyWidget extends React.Component {
       body: formData,
     })).then(handleErrors)
     .catch(error => {
-      console.log(error);
+      console.log(error)
     })
   } 
   
  render () {
-  
-  
    return(
     
     <div className="py-4 my-4 row">
@@ -124,8 +125,8 @@ export default class EditPropertyWidget extends React.Component {
             rows="1" name="baths" value={this.state.baths || ''} onChange={this.handleChange}/>
         </div>
 
-
         <button className="btn btn-sm btn-danger" type="submit">Submit</button>
+
       </form>
     </div>
   )

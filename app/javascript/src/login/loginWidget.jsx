@@ -1,9 +1,13 @@
 // loginWidget.jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { safeCredentials, handleErrors } from '@utils/fetchHelper';
+import React from 'react'
+import { safeCredentials, handleErrors } from '@utils/fetchHelper'
 
-class LoginWidget extends React.Component {
+/*
+  loginwidget create session through '/api/sessions'
+*/
+
+export default class LoginWidget extends React.Component {
+  
   state = {
     email: '',
     password: '',
@@ -16,6 +20,7 @@ class LoginWidget extends React.Component {
     })
   }
 
+  // login create user session through /api/sessions
   login = (e) => {
     if (e) { e.preventDefault(); }
     this.setState({
@@ -62,5 +67,3 @@ class LoginWidget extends React.Component {
     )
   }
 }
-
-export default LoginWidget

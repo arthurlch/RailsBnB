@@ -1,17 +1,22 @@
 // login.jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Layout from '@src/layout';
-import LoginWidget from './loginWidget';
-import SignupWidget from './signupWidget';
-import { safeCredentials, handleErrors } from '@utils/fetchHelper';
+import React from 'react'
+import Layout from '@src/layout'
+import LoginWidget from './loginWidget'
+import SignupWidget from './signupWidget'
+import { handleErrors } from '@utils/fetchHelper';
 
-class Login extends React.Component {
+/* 
+  Login client side
+  User api endpoit /api/authenticated to verify credits of user 
+*/
+
+export default class Login extends React.Component {
   state = {
     authenticated: false,
     show_login: true,
   }
 
+  // mount api authenticated 
   componentDidMount() {
     fetch('/api/authenticated')
       .then(handleErrors)
@@ -43,8 +48,8 @@ class Login extends React.Component {
             </div>
           </div>
         </Layout>
-      );
-    };
+      )
+    }
 
     return (
       <Layout>
@@ -61,5 +66,3 @@ class Login extends React.Component {
     )
   }
 }
-
-export default Login;
