@@ -23,7 +23,7 @@ module Api
       else
         render json: { success: false }, status: :bad_request
       end
-
+      
     end
 
     def update 
@@ -49,7 +49,7 @@ module Api
 
     def property_params 
       params.require(:property).permit(:id, :title, :description,
-      :property_type, :price_per_night, :max_guests, :bedrooms, :city, :country, :beds, :baths, :user, :images[], :avatar)
+      :property_type, :price_per_night, :max_guests, :bedrooms, :city, :country, :beds, :baths, :user, :avatar)
     end
   end
 end

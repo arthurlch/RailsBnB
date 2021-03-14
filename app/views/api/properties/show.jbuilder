@@ -10,7 +10,7 @@ json.property do
   json.bedrooms @property.bedrooms
   json.beds @property.beds
   json.baths @property.baths
-  json.avatar @property.image_url 
+  json.avatar @property.image_url
 
   json.bookings do
     json.array! @property.bookings do |booking|

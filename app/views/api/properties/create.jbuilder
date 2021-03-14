@@ -10,9 +10,8 @@ json.property do
   json.bedrooms @property.bedrooms
   json.beds @property.beds
   json.baths @property.baths
+  json.avatar url_for(@property.avatar)
   
-  json.avatar url_for(@property.avatar) if @property.avatar.attached?
-
   json.user do
     json.id @property.user.id
     json.username @property.user.username
