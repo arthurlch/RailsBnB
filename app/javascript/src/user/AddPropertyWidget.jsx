@@ -35,7 +35,9 @@ export default class UserPropertyForm extends React.Component {
     
     
     // formData append image
-    formData.append('property[avatar]', avatar.files[0])
+    let avatar = document.getElementById('avatar')
+    console.log(avatar.files)
+    formData.set('property[avatar]', avatar.files[0])
     // Set other params in the formData
     formData.set('property[id]', this.state.id);
     formData.set('property[title]', this.state.title);

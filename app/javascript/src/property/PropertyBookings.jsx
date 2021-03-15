@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 import { handleErrors } from '@utils/fetchHelper'
 
 export default class PropertyBookings extends React.Component {
