@@ -34,6 +34,7 @@ export default class UserPropertyForm extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault()
     let formData = new FormData();
     
     
