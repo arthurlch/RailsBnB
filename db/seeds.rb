@@ -15,6 +15,7 @@ users = User.create([
   { username: 'Cammy', email: 'cammy@test.com', password: 'password' },
 ])
 
+
 properties = Property.create([
   {
     title: 'Studio Apartment Minutes from Metro',
