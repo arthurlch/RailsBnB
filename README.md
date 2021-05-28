@@ -3,6 +3,11 @@
 ## Project
 This project was made to desmontrate how CRUD operation can be done with Ruby on Rails and React, monolith. 
 
+Features :
+User signup, login, signout.
+User can upload property.
+User can make a booking. 
+User can modify its properties. 
 
 ## Getting Started
 
