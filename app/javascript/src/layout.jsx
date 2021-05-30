@@ -38,11 +38,6 @@ const Layout = (props) => {
       </div>
       
     
-
-      
-
-      
-
       {props.children}
 
 
