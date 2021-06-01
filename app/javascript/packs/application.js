@@ -16,5 +16,6 @@
 // const imagePath = (name) => images(name, true)
 
 import 'bootstrap/dist/css/bootstrap'
+import 'bootstrap/js/dist/collapse'
 
 
