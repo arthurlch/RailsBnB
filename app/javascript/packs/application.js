@@ -15,6 +15,8 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import 'bootstrap/dist/css/bootstrap'
+import 'bootstrap'
+import "../stylesheets/application"
+
 
 

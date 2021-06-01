@@ -6,41 +6,44 @@ import './layout.scss';
 const Layout = (props) => {
   return (
     <React.Fragment>
-      <div>
-      <nav className="navbar navbar-expand-xl py-0 my-0 position-absolute w-100" id="navbar">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossOrigin="anonymous"></link>
-        <div className="d-none d-xl-flex flex-grow-1" id="xlNavbar">
-          <a className="navbar-brand py-0 pr-0 pl-2 text-dark" href="/">Airbnb</a>
-          <div className="navbar-nav ml-auto">
-          <a className="nav-item nav-link py-0 px-2" href="/"><div className="px-2">Home</div></a>
-            <a className="nav-item nav-link py-0 px-2" href="/login"><div className="px-2">Sign up</div></a>
-            <a className="nav-item nav-link py-0 px-2" href="/login"><div className="px-2">Log in</div></a>
+      <header>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <a className="navbar-brand" href="#">Navbar</a>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
+                <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Link</a>
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a className="dropdown-item" href="#">Action</a>
+                  <a className="dropdown-item" href="#">Another action</a>
+                  <div className="dropdown-divider" />
+                  <a className="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link disabled" href="#" tabIndex={-1} aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form className="form-inline my-2 my-lg-0">
+              <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
           </div>
-        </div>
-
-        <a className="navbar-toggler navbar-brand py-0 pr-0 pl-2 border-0 
-          position-relative collapsed" role="button" data-toggle="collapse" 
-          href="#navbarMenu" id="navbarMenuToggler">Airbnb</a>
-        <div className="collapse navbar-collapse px-4 pb-4 font-weight-light bg-white
-         position-absolute" id="navbarMenu">
-          <a className="nav-item nav-link" href="#">Home</a>
-          <hr />
-          <a className="nav-item nav-link" href="#">Invite friends</a>
-          <a className="nav-item nav-link" href="#">Invite friends</a>
-          <hr />
-          <a className="nav-item nav-link" href="#">Host a home<br /><small>Earn up to <b>$12,319 HKD a month</b></small></a>
-          <a className="nav-item nav-link" href="#">Sign up</a>
-          <a className="nav-item nav-link" href="#">Log in</a>
-          <hr />
-          <a className="nav-item nav-link" href="#">Help</a>
-        </div>
-      </nav>
-      </div>
+        </nav>
+      </header>
       
     
-
-      
-
       
 
       {props.children}

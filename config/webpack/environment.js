@@ -30,5 +30,9 @@ dotenvFiles.forEach((dotenvFile) => {
 })
 
 environment.plugins.prepend('Environment', new webpack.EnvironmentPlugin(JSON.parse(JSON.stringify(process.env))))
-
+environment.plugins.append("Provide", new webpack.ProvidePlugin({
+  $: 'jquery',
+  jQuery: 'jquery',
+  Popper: ['popper.js', 'default']
+}))
 module.exports = environment
