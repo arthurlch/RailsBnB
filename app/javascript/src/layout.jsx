@@ -45,14 +45,7 @@ const Layout = (props) => {
       </nav>
       </div>
       
-    
-
-      
-
-      
-
       {props.children}
-
 
       <footer className="container-fluid">
       <div className="row pt-5 d-none d-md-flex footerNav">
