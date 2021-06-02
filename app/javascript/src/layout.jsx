@@ -25,7 +25,8 @@ const Layout = (props) => {
                 </li>
               </ul>
               <form className="d-flex">
-                <button className="btn btn-outline-info" type="submit">Login</button>
+                <button className="btn btn-info" type="submit">Become a host</button>
+                <button className="btn btn-outline-info ms-3 " type="submit">Login</button>
               </form>
             </div>
           </div>
