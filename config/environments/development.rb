@@ -59,5 +59,5 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.web_console.whitelisted_ips = '10.0.2.2'
   # configure active storage for amazon s3
-
+  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReloadszs
 end
