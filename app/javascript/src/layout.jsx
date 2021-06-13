@@ -1,24 +1,17 @@
 // layout.js
-import React, { useState, useEffect }  from 'react';
+import React from 'react';
 import './layout.scss';
 
 const Layout = (props) => {
   
-  const [user, setUser] = useState([])
-    useEffect(() => {
-        fetch("/api/users/").then(
-            res => setUser(res.data)
-        )
-    })
-
   return (
     <React.Fragment>
       
         <header>
           <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg">
               <div className="container-fluid">
-                <a className="navbar-brand" href="#">Navbar</a>
+                <a className="navbar-brand" href="/">RailsBnB</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" 
                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
                   aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +23,7 @@ const Layout = (props) => {
                       <a href="/">Home</a>
                     </li>
                     <li className="nav-item">
-                      <a href="/user/:id">Profile</a>
+                      <a href="/user/1">Profile</a>
                     </li>
                   </ul>
                   <form className="d-flex">
