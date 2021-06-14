@@ -1,56 +1,49 @@
-/* ----------- Container ----------- */
-@media (min-width: 1200px) {
-  .container-fluid {
-    max-width: 1080px;
-  }
-}
-.container-fluid, .container {
-  padding-left: 24px;
-  padding-right: 24px;
+/* ----------- Nav ----------- */
+
+.navbar-brand {
+  color: #0dcaf0; 
+  font-size: 25px;
 }
 
-/* ----------- Navigation ----------- */
-@media (min-width: 1200px) {
-  #navbarMenu {
-    display: none !important;
-  }
-  #xlNavbar .nav-link div:hover {
-    color: #3e8297
-    ;
-  }
-}
-#navbar {
-  background-color: #ffffff;
-}
-#xlNavbar .navbar-brand, #navbarMenuToggler, #xlNavbar .nav-link {
-  line-height: 80px;
-}
-#xlNavbar .nav-link {
-  font-size: 14px;
-  font-weight: 600;
-  color: #5bc0de;
-}
-#navbarMenuToggler {
-  color: rgb(255, 90, 95);
-  transition: color 0.25s;
-}
-#navbarMenuToggler.collapsed {
-  color: #fff;
-}
-#navbarMenu .nav-link {
-  color: #333;
-}
-#navbarMenu {
-  top: 0;
-  left: 0;
-  right: 0;
-  padding-top: 88px;
-}
-#navbarMenu .nav-link {
-  padding: 12px 0;
+.navbar-brand:hover {
+  color: rgb(29, 27, 27);
 }
 
+.nav-item a {
+  color: #0dcaf0; 
+  text-decoration: none;
+}
 
+.nav-item a:active {
+  text-decoration: underline solid #0dcaf0;
+}
+
+.nav-item a:hover {
+  color: rgb(29, 27, 27);
+}
+
+#login {
+  color: white;
+  text-decoration: none;
+}
+
+#login:hover {
+  color: grey
+}
+
+#become-host {
+  color: rgb(29, 27, 27);
+  text-decoration: none;
+}
+
+#become-host:hover {
+  color: white;
+}
+
+#nav-toggler  {
+  color: rgb(29, 27, 27);
+  
+}
 
 /* ----------- Footer ----------- */
 .footerNav h5, .footerNav a {
