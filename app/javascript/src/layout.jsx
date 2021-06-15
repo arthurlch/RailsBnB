@@ -42,9 +42,9 @@ const Layout = (props) => {
       
       {props.children}
 
-      <footer className="container-fluid">
-      <div className="row pt-5 d-none d-md-flex footerNav">
-        <div className="col-3">
+      <footer className="container container-footer">
+      <div className="row pt-5 align-items-center footerNav">
+        <div className="col-3 footNav-col">
           <h5 className="mb-3">Airbnb</h5>
           <ul className="list-unstyled mb-1">
             <li><a href="#" className="text-secondary">Careers</a></li>
@@ -54,7 +54,7 @@ const Layout = (props) => {
             <li><a href="#" className="text-secondary">Diversity & Belonging</a></li>
           </ul>
         </div>
-        <div className="col-3">
+        <div className="col-3 footNav-col">
           <h5 className="mb-3">Discover</h5>
           <ul className="list-unstyled mb-1">
             <li><a href="#" className="text-secondary">Trust & Safety</a></li>
@@ -67,7 +67,7 @@ const Layout = (props) => {
             <li><a href="#" className="text-secondary">Events<span className="ml-1 badge badge-info font-weight-light p-1">New</span></a></li>
           </ul>
         </div>
-        <div className="col-3">
+        <div className="col-3 footNav-col">
           <h5 className="mb-3">Hosting</h5>
           <ul className="list-unstyled mb-1">
             <li><a href="#" className="text-secondary">Why Host</a></li>
@@ -78,7 +78,7 @@ const Layout = (props) => {
             <li><a href="#" className="text-secondary">Open Homes<span className="ml-1 badge badge-info font-weight-light p-1">New</span></a></li>
           </ul>
         </div>
-        <div className="col-3">
+        <div className="col-3 footNav-col">
           <h5 className="mb-3 social">
             <i className="text-secondary mr-3 fab fa-facebook-f"></i>
             <i className="text-secondary mr-3 fab fa-twitter"></i>

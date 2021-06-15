@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Layout from '@src/layout';
 import { handleErrors } from '@utils/fetchHelper';
 import './home.scss';
+import homeImg from '../src/image/railsbnbtrip.png'
 
 // React Router need to be included
 
@@ -47,6 +48,16 @@ class Home extends React.Component {
     const { properties, next_page, loading } = this.state;
     return (
       <Layout>
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-4">
+              <p className="hero-text">Find a place to.. <br/>Relax, <br/>Think, <br/>Ressource yourself</p>
+            </div>
+            <div className="col-8">
+              <img className="homeImg" src={homeImg} alt="railsbnb"/>
+            </div>
+          </div>  
+        </div>
         <div className="container pt-4">
           <h4 className="mb-1">Top-rated places to stay</h4>
           <p className="text-secondary mb-3">Explore some of the best-reviewed stays in the world</p>

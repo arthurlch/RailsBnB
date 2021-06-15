@@ -42,8 +42,67 @@
 
 #nav-toggler  {
   color: rgb(29, 27, 27);
-  
 }
+
+.homeImg {
+  max-width: 90%;
+  margin-left: 40px;;
+}
+
+.hero-text {
+  margin-left: 50px;
+  font-size: 37px;
+  font-weight: 600;
+}
+
+// Breakpoints 
+
+@media (min-width: 376px) {  
+  .hero-text {
+    margin-left: 30px;
+    font-size: 17px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {  
+  .hero-text {
+    margin-left: 30px;
+    font-size: 17px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+  .hero-text {
+    margin-left: 30px;
+    font-size: 17px;
+  }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+  .hero-text {
+    margin-left: 50px;
+    font-size: 27px;
+  }
+ }
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+  .hero-text {
+    margin-left: 50px;
+    font-size: 27px;
+  }
+ }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { 
+  .hero-text {
+    margin-left: 50px;
+    font-size: 37px;
+  }
+ }
 
 /* ----------- Footer ----------- */
 .footerNav h5, .footerNav a {
@@ -61,4 +120,19 @@
 }
 .footerBar .select .angle {
   transform: rotate(90deg);
+}
+.footerNav {
+  padding: auto;
+  margin: auto;
+}
+
+.footNav-col {
+  padding: auto;
+  margin: auto;
+}
+
+.container-footer {
+  padding: auto;
+  margin: auto;
+  align-content: center;
 }
