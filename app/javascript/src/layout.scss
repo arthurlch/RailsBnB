@@ -107,9 +107,12 @@
 /* ----------- Footer ----------- */
 .footerNav h5, .footerNav a {
   font-size: 14px;
+  text-decoration: none;
 }
+
 .footerNav h5 {
   line-height: 18px;
+  text-decoration: none;
 }
 .footerNav .social {
   font-size: 18px;
@@ -129,6 +132,7 @@
 .footNav-col {
   padding: auto;
   margin: auto;
+  text-decoration: none;
 }
 
 .container-footer {

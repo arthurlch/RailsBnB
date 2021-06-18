@@ -64,7 +64,7 @@ const Layout = (props) => {
             <li><a href="#" className="text-secondary">Business Travel</a></li>
             <li><a href="#" className="text-secondary">Guidebooks</a></li>
             <li><a href="#" className="text-secondary">Airbnbmag</a></li>
-            <li><a href="#" className="text-secondary">Events<span className="ml-1 badge badge-info font-weight-light p-1">New</span></a></li>
+            <li><a href="#" className="text-secondary">Events<span className="ms-1 badge bg-info font-weight-light p-1">New</span></a></li>
           </ul>
         </div>
         <div className="col-3 footNav-col">
@@ -74,8 +74,8 @@ const Layout = (props) => {
             <li><a href="#" className="text-secondary">Hospitality</a></li>
             <li><a href="#" className="text-secondary">Responsible Hosting</a></li>
             <li><a href="#" className="text-secondary">Community Center</a></li>
-            <li><a href="#" className="text-secondary">Host an Experience<span className="ml-1 badge badge-info font-weight-light p-1">New</span></a></li>
-            <li><a href="#" className="text-secondary">Open Homes<span className="ml-1 badge badge-info font-weight-light p-1">New</span></a></li>
+            <li><a href="#" className="text-secondary">Host an Experience<span className="ms-1 badge bg-info font-weight-light p-1">New</span></a></li>
+            <li><a href="#" className="text-secondary">Open Homes<span className="ms-1 badge bg-info font-weight-light p-1">New</span></a></li>
           </ul>
         </div>
         <div className="col-3 footNav-col">
