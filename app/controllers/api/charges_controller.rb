@@ -30,7 +30,7 @@ module Api
       @charge = booking.charges.new({
         checkout_session_id: session.id,
         currency: 'usd',
-        amount: amount
+        amount: amount 
       })
 
       if @charge.save
@@ -85,3 +85,4 @@ module Api
     end
   end
 end
+
