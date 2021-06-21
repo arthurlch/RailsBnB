@@ -84,5 +84,5 @@ module Api
       render 'api/charges/show', status: :ok
     end
   end
-end
+end 
 
