@@ -3,12 +3,13 @@
 ## Project
 This project was made to desmontrate how CRUD operation can be done with Ruby on Rails and React, monolith. 
 
+Check it on Heroku : https://railsbnb1.herokuapp.com/
 
 ## Getting Started
 
-Clone with https : https://github.com/ArthurDav3/airbnb_clone.git
+Clone with https : https://github.com/ArthurDav3/railsbnb.git
 !!https will be depracted soon!!
-or clone with SSH : git@github.com:ArthurDav3/airbnb_clone.git
+or clone with SSH : git@github.com:ArthurDav3/railsbnb.git
 Github CLI : gh repo clone ArthurDav3/airbnb_clone  
 How to pull --> https://help.github.com/en/articles/cloning-a-repository
 Open bash : 
