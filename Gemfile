@@ -51,12 +51,13 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_bot_rails', '~> 4.11'
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.8'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4.2'
 end
 
 group :development do
+  gem 'rspec-rails'
+
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -71,6 +72,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'rspec-rails'
+
 end
 
 group :production do
