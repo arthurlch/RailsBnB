@@ -1,15 +1,9 @@
 // signupWidget.jsx
-import React from 'react'
-import { safeCredentials, handleErrors } from '@utils/fetchHelper'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { safeCredentials, handleErrors } from '@utils/fetchHelper';
 
-/* 
-  SignupWidget = signup 
-  POST request /api/users 
-  POST request /api/sessions to create user session when sign-up
-*/
-
-export default class SignupWidget extends React.Component {
-  
+class SignupWidget extends React.Component {
   state = {
     email: '',
     password: '',
@@ -23,7 +17,6 @@ export default class SignupWidget extends React.Component {
     })
   }
 
-  // fetch /api/users to create user
   signup = (e) => {
     if (e) { e.preventDefault(); }
     this.setState({
@@ -53,7 +46,6 @@ export default class SignupWidget extends React.Component {
       })
   }
 
-  // login create user session
   login = (e) => {
     if (e) { e.preventDefault(); }
     this.setState({
@@ -72,9 +64,9 @@ export default class SignupWidget extends React.Component {
       .then(handleErrors)
       .then(data => {
         if (data.success) {
-          const params = new URLSearchParams(window.location.search)
-          const redirect_url = params.get('redirect_url') || '/'
-          window.location = redirect_url
+          const params = new URLSearchParams(window.location.search);
+          const redirect_url = params.get('redirect_url') || '/';
+          window.location = redirect_url;
         }
       })
       .catch(error => {
@@ -85,7 +77,7 @@ export default class SignupWidget extends React.Component {
   }
 
   render () {
-    const { email, password, username } = this.state
+    const { email, password, username, error } = this.state;
     return (
       <React.Fragment>
         <form onSubmit={this.signup}>
@@ -100,3 +92,5 @@ export default class SignupWidget extends React.Component {
     )
   }
 }
+
+export default SignupWidget
