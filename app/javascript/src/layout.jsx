@@ -4,10 +4,12 @@ import './layout.scss';
 
 const Layout = (props) => {
   
+
+
   return (
+
     <React.Fragment>
-      
-        <header>
+      <header>
           <div>
             <nav className="navbar navbar-expand-lg navbar-light">
               <div className="container-fluid">
@@ -23,7 +25,7 @@ const Layout = (props) => {
                       <a href="/">Home</a>
                     </li>
                     <li className="nav-item">
-                      <a href="/user">Profile</a>
+                      <a href='user/1'>Profile</a>
                     </li>
                   </ul>
                   <form className="d-flex">
@@ -39,7 +41,7 @@ const Layout = (props) => {
             </nav>
           </div>
         </header>
-      
+
       {props.children}
 
       <footer className="container container-footer">
@@ -106,6 +108,8 @@ const Layout = (props) => {
         </div>
       </div>
     </footer>
+
+    
     
     </React.Fragment>
   );

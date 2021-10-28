@@ -43,7 +43,7 @@ export default class User extends React.Component  {
     } = user  
 
     return (
-      <Layout>    
+      <Layout user_id={user.id}>
         <div className="container pt-4 mt-4 ">
         <div className="row pt-4 mt-4">
           <h2>Welcome {user.username}</h2>

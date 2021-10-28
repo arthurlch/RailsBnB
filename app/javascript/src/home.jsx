@@ -5,8 +5,7 @@ import Layout from '@src/layout';
 import { handleErrors } from '@utils/fetchHelper';
 import './home.scss';
 import homeImg from '../src/image/railsbnbtrip.png'
-
-// React Router need to be included
+import { data } from 'jquery';
 
 class Home extends React.Component {
   state = {
@@ -14,9 +13,11 @@ class Home extends React.Component {
     total_pages: null,
     next_page: null,
     loading: true,
+    user: {}
   }
   
   componentDidMount() {
+    
     fetch('/api/properties?page=1')
       .then(handleErrors)
       .then(data => {
@@ -28,6 +29,8 @@ class Home extends React.Component {
         })
       })
   }
+
+
   loadMore = () => {
     if (this.state.next_page === null) {
       return;
@@ -44,10 +47,19 @@ class Home extends React.Component {
         })
       })
   }
+  
   render () {
-    const { properties, next_page, loading } = this.state;
+    const { user, properties, next_page, loading } = this.state;
+    
+    const {
+      id,
+      username,
+      email,
+      bookings
+    } = user 
+
     return (
-      <Layout>
+      <Layout user_id={id}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-4">
@@ -91,6 +103,10 @@ class Home extends React.Component {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  const node = document.getElementById('params');
+  const data = JSON.parse(node.getAttribute('data-params'));
+
   ReactDOM.render(
     <Home />,
     document.body.appendChild(document.createElement('div')),
