@@ -59,7 +59,7 @@ class Home extends React.Component {
     } = user 
 
     return (
-      <Layout user_id={id}>
+      <Layout user_id={this.props.user_id}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-4">
@@ -103,9 +103,11 @@ class Home extends React.Component {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const node = document.getElementById('params')
+  const data = JSON.parse(node.getAttribute('data'))
 
   ReactDOM.render(
-    <Home />,
+    <Home user_id={data.user_id} />,
     document.body.appendChild(document.createElement('div')),
   )
 })

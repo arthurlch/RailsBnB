@@ -25,7 +25,7 @@ const Layout = (props) => {
                       <a href="/">Home</a>
                     </li>
                     <li className="nav-item">
-                      <a href='user/1'>Profile</a>
+                      <a href={"/user/" + props.user_id }>Profile</a>
                     </li>
                   </ul>
                   <form className="d-flex">
