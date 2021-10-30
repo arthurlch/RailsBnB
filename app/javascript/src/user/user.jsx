@@ -8,6 +8,12 @@ import UserBooking from './UserBooking'
 /* user page, from this page user can add a property, see it's bookings as a guest, going to
   checkout for its bookings if user didnt pay yet the booking, via stripe
   go to its properties page to see what bookings are made by the guest.
+
+
+  Todo: 
+
+  conditional rendering to do! 
+  so we can hide users info using api/auth  
 */
 
 export default class User extends React.Component  {
