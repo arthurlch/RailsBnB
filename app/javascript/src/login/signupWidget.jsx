@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { safeCredentials, handleErrors } from '@utils/fetchHelper';
 
 class SignupWidget extends React.Component {
+  
   state = {
     email: '',
     password: '',

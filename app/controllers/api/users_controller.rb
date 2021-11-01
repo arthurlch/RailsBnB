@@ -1,5 +1,6 @@
 module Api
   class UsersController < ApplicationController
+    
     def create
       @user = User.new(user_params)
       
@@ -9,6 +10,8 @@ module Api
         render json: { success: false }, status: :bad_request
       end
     end
+    
+   # skip_before_action :verify_authenticity_token
 
     def show
       @user = User.find_by(id: params[:id])

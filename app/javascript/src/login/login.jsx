@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from '@src/layout'
 import LoginWidget from './loginWidget'
 import SignupWidget from './signupWidget'
+import LogoutWidget from './logoutWidget'
 import { handleErrors } from '@utils/fetchHelper';
 
 /* 
@@ -33,6 +34,8 @@ export default class Login extends React.Component {
     })
   }
 
+
+
   render () {
     const { authenticated, show_login } = this.state;
     if (authenticated) {
@@ -43,6 +46,15 @@ export default class Login extends React.Component {
               <div className="col-12 col-md-9 col-lg-6 mx-auto my-4">
                 <div className="border p-4">
                   <p className="mb-0">You are already logged in 🙂</p>
+                  <div className="logout-widget" style={{
+                    paddingTop: '10px',
+                    marginTop: '10px',
+                    display: 'flex',
+                    alignContent: 'center',
+                    justifyContent: 'center'
+                    }}>
+                    <LogoutWidget />
+                  </div>
                 </div>
               </div>
             </div>
