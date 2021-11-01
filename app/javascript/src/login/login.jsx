@@ -34,8 +34,6 @@ export default class Login extends React.Component {
     })
   }
 
-
-
   render () {
     const { authenticated, show_login } = this.state;
     if (authenticated) {
@@ -51,8 +49,7 @@ export default class Login extends React.Component {
                     marginTop: '10px',
                     display: 'flex',
                     alignContent: 'center',
-                    justifyContent: 'center'
-                    }}>
+                    justifyContent: 'center'}}>
                     <LogoutWidget />
                   </div>
                 </div>

@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
   def home
     token = cookies.signed[:airbnb_session_token]
     session = Session.find_by(token: token)
+    
     if session == nil 
       @data = { user_id: '' }.to_json
       render 'home'
@@ -20,6 +21,7 @@ class StaticPagesController < ApplicationController
   def login
     token = cookies.signed[:airbnb_session_token]
     session = Session.find_by(token: token)
+    
     if session == nil 
       @data = { user_id: '' }.to_json
       render 'login'

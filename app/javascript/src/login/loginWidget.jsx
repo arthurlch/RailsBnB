@@ -63,7 +63,6 @@ export default class LoginWidget extends React.Component {
         </form>
         <hr/>
         <p className="mb-0">Don't have an account? <a className="text-primary" onClick={this.props.toggle}>Sign up</a></p>
-        <p>Logs to try the app :  email: 'tommy@test.com', password: 'password'</p>
       </React.Fragment>
     )
   }

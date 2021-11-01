@@ -4,7 +4,6 @@ import { safeCredentials, handleErrors } from '@utils/fetchHelper';
 export default class LogoutWidget extends React.Component {
 
   state = {
-    session: {},
     error: ``
   }
 
@@ -50,5 +49,4 @@ export default class LogoutWidget extends React.Component {
     </React.Fragment>     
    )
  }
-
 }
