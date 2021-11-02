@@ -5,7 +5,6 @@ import Layout from '@src/layout';
 import { handleErrors } from '@utils/fetchHelper';
 import './home.scss';
 import homeImg from '../src/image/railsbnbtrip.png'
-import { data } from 'jquery';
  
 class Home extends React.Component {
   state = {
