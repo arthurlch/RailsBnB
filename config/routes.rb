@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get '/login' => 'static_pages#login'
   get '/user/:id' => 'static_pages#user'
   get '/booking/:id/success' => 'static_pages#charge'
-  
+  match '*path', to: redirect('/'), via: :all
+
   namespace :api do
     # Add routes below this line
     resources :users, only: [:create, :show, :update] 
