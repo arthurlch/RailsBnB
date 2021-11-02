@@ -6,7 +6,6 @@ import { handleErrors } from '@utils/fetchHelper';
 import './home.scss';
 import homeImg from '../src/image/railsbnbtrip.png'
 
-
 class Home extends React.Component {
   state = {
     properties: [],
@@ -15,9 +14,8 @@ class Home extends React.Component {
     loading: true,
     user: {}
   }
-  
+
   componentDidMount() {
-    
     fetch('/api/properties?page=1')
       .then(handleErrors)
       .then(data => {
@@ -52,14 +50,11 @@ class Home extends React.Component {
     const { user, properties, next_page, loading } = this.state;
     
     const {
-      id,
-      username,
-      email,
-      bookings
+      id
     } = user 
 
     return (
-      <Layout user_id={this.props.user_id}>
+      <Layout user_id={id}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-4">
@@ -103,6 +98,7 @@ class Home extends React.Component {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
   const node = document.getElementById('params')
   const data = JSON.parse(node.getAttribute('data'))
 

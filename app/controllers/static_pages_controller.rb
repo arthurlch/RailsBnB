@@ -5,9 +5,11 @@ class StaticPagesController < ApplicationController
     
     if session == nil 
       @data = { user_id: '' }.to_json
+      render 'home'
     else 
       current_user = session.user
       @data = { user_id: current_user.id }.to_json
+      render 'home' 
     end
   end
 
