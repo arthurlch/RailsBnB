@@ -54,20 +54,11 @@ export default class UserProperty extends React.Component  {
 
     return (
       <div className="">
-        <div>
-          <h4 className="py-4 my-4">Become a host today and add a property to your account!</h4>
-          <button className="btn btn-sm btn-info mx-3" onClick={this._showForm.bind(null, true)}>Add Property</button>
-          <button className="btn btn-sm" onClick={this._showForm.bind(null, false)}>Hide Form</button>
-          { this.state.showForm && (
-            <div className="UserPropertyForm">
-              <AddPropertyWidget user_id={id}/>
-            </div>)
-            }
-        </div>
         <div className="my-3">
+          <h3>My Properties:</h3>
           {properties.map(property => 
           <ul className="my-4 py-3" key={property.id}> 
-            <li><span className="font-weight-bold"> Property:</span> {property.title}</li>
+            <li><span className="font-weight-bold">Name:</span> {property.title}</li>
             <li>Description: {property.description}</li>
             <li>City: {property.city}</li>
             <li>Country: {property.country}</li>
@@ -83,6 +74,17 @@ export default class UserProperty extends React.Component  {
               </button>
             </div>
           </ul>)} 
+        </div>
+
+        <div>
+          <h4 className="py-4 my-4">Become a host today and add a property to your account!</h4>
+          <button className="btn btn-sm btn-info mx-3" onClick={this._showForm.bind(null, true)}>Add Property</button>
+          <button className="btn btn-sm" onClick={this._showForm.bind(null, false)}>Hide Form</button>
+          { this.state.showForm && (
+            <div className="UserPropertyForm">
+              <AddPropertyWidget user_id={id}/>
+            </div>)
+            }
         </div>
       </div>
     )
