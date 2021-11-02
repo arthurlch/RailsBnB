@@ -27,10 +27,7 @@ const Layout = (props) => {
                   </ul>
                   <form className="d-flex">
                     <button className="btn btn-info"  type="submit">
-                      <a href="/login" id="login">Login</a>
-                    </button>
-                    <button className="btn btn-outline-info ms-3" type="submit">
-                      <a href="/login" id="become-host">Become a host</a>
+                      <a href="/login" id="login">My Account</a>
                     </button>
                   </form>
                 </div>

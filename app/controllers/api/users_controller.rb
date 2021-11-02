@@ -11,7 +11,8 @@ module Api
       end
     end
     
-   # skip_before_action :verify_authenticity_token
+    # Safety check user show and update route cannot be seen if User is not logged in.
+    #skip_before_action :verify_authenticity_token 
 
     def show
       @user = User.find_by(id: params[:id])
