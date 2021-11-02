@@ -1,5 +1,6 @@
 // addpropertywidget.jsx
 import React from 'react' 
+import './AddPropertyWidget.scss'
 import { handleErrors, safeCredentialsForm } from '@utils/fetchHelper';
 // fetch from property api and post to property api instead of user.properties 
 /* 
@@ -69,15 +70,15 @@ export default class UserPropertyForm extends React.Component {
  render () {
    return(
     <div className="py-4 my-4 row">
-      <form onSubmit={this.handleSubmit} id="userPropertyForm">
+      <form onSubmit={this.handleSubmit} id="userPropertyForm" className="formStyle">
   
-        <div className="form-group">
+        <div className="form-group ">
           <label className="col" htmlFor="title">Name:</label>
           <input className="form-control form-control-sm" id="title" 
             rows="1" name="title" value={this.state.title || ''} onChange={this.handleChange}/>
         </div>
 
-        <div className="form-group">
+        <div className="form-group pb-4">
           <label className="col" htmlFor="form-property-description">Description:</label>
           <textarea className="form-control form-control-sm" id="form-property-description" 
             rows="2" name="description" value={this.state.description || ''} onChange={this.handleChange}></textarea>
@@ -137,8 +138,10 @@ export default class UserPropertyForm extends React.Component {
           <input className="form-control form-control-sm" id="avatar" type="file"
             rows="1" name="avatar" value={this.state.avatar || ''} onChange={this.handleChange}/>
         </div>
-
-        <button className="btn btn-sm btn-danger" type="submit">Submit</button>
+        
+        <div className="form-btn">
+          <button className="btn btn-sm btn-info mb-3" type="submit">Submit</button>
+        </div>
       </form>
     </div>
   )

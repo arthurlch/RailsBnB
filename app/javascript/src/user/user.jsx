@@ -54,8 +54,8 @@ export default class User extends React.Component  {
         <div className="row pt-4 mt-4">
           <h2>Welcome {user.username}</h2>
           <div className="col-md-12 pt-4 mt-4">
-            <UserProperty user_id={id} />
-            <UserBooking user_id={id} booking_id={id} />
+          <UserProperty user_id={id}/>
+          {bookings.length = 0 ?  <UserBooking user_id={id} booking_id={id} /> : null}
           </div>
         </div>
         </div> 
