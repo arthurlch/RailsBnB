@@ -19,4 +19,4 @@ Rails.application.routes.draw do
     post '/charges/mark_complete' => 'charges#mark_complete'
   end 
   match '*path', to: redirect('/'), via: :all
-end
+end  
