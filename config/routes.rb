@@ -18,5 +18,5 @@ Rails.application.routes.draw do
     #stripe webhook
     post '/charges/mark_complete' => 'charges#mark_complete'
   end 
-  match '*path', to: redirect('/'), via: :all
+  # match '*path', to: redirect('/'), via: :all
 end
