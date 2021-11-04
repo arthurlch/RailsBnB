@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/property/:id' => 'static_pages#property'
   get '/login' => 'static_pages#login'
   get '/user/:id' => 'static_pages#user'
+  get '/user' => 'static_pages#user'
   get '/booking/:id/success' => 'static_pages#charge'
   
   namespace :api do
