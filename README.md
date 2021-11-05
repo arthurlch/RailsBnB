@@ -2,8 +2,10 @@
 
 ## Project
 This project was made to desmontrate how CRUD operation can be done with Ruby on Rails and React, monolith. 
+Session system with cookies, Payment with Stripe API, AWS S3 for image data hosting, fully functionnal user profile. 
 
-Check it on Heroku : https://railsbnb1.herokuapp.com/
+
+Check it on Heroku : https://railsbnb1.herokuapp.com/ UPDATED! 
 
 ## Getting Started
 
