@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/property/:id' => 'static_pages#property'
   get '/login' => 'static_pages#login'
   get '/user/:id' => 'static_pages#user'
+  get '/user' => 'static_pages#user'
   get '/booking/:id/success' => 'static_pages#charge'
   
   namespace :api do
@@ -18,5 +19,5 @@ Rails.application.routes.draw do
     #stripe webhook
     post '/charges/mark_complete' => 'charges#mark_complete'
   end 
-  match '*path', to: redirect('/'), via: :all
+  # match '*path', to: redirect('/'), via: :all
 end

@@ -37,7 +37,8 @@ export default class User extends React.Component  {
     
     const { user, loading } = this.state;
     if (loading) {
-      return <p>loading...</p>;
+      return <p>loading..., comeback to homepage: 
+        <a href="https://railsbnb1.herokuapp.com/">here</a></p>;
     };
 
     const {
